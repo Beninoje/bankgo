@@ -5,7 +5,6 @@ const AnimatedCounter = ({ amount }:{ amount: number }) => {
   return (
     <div className='w-full'>
         <CountUp 
-
             end={amount}
             decimals={2}
             decimal=","
