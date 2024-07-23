@@ -6,8 +6,25 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Libre Baskerville", serif;
+  background-color: #f5f5f5;
+}
+/* Text/Fonts Color */
+.libre-baskerville-regular {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
+.libre-baskerville-bold {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.text-color{
+  color:#1A1A23;
+}
 /* Hide scrollbar for Chrome, Safari and Opera */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
