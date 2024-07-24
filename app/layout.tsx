@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: "bankgo",
   description: "bankgo is a modern banking platform for everyone",
   icons:{
-    icon:'/icons/bankgo_logo.svg'
+    icon:'/icons/logo.svg'
   }
 };
 
