@@ -270,7 +270,12 @@ declare interface getInstitutionProps {
 declare interface getTransactionsProps {
   accessToken: string;
 }
-
+declare interface AccordionItemProps {
+  open: boolean;
+  toggle: () => void;
+  title: string;
+  description: string;
+}
 declare interface CreateFundingSourceOptions {
   customerId: string; // Dwolla Customer ID
   fundingSourceName: string; // Dwolla Funding Source Name

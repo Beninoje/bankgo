@@ -3,6 +3,8 @@ import Header from '@/components/Header'
 import Link from 'next/link';
 import Image from 'next/image';
 import React from 'react'
+import FAQInfo from '@/components/FAQInfo';
+import Banks from '@/components/Banks';
 
 const Home = () => {
   return (
@@ -26,20 +28,8 @@ const Home = () => {
       <div className="w-full flex justify-center mt-32">
         <Image src="/icons/homepage-img.svg" alt="homepage img" width={1000} height={1000}/>
       </div>
-      <div className="grid grid-cols-4 place-items-center items-center pt-[50px] px-32">
-        <div className="col-span-1">
-          <Image src="/icons/chase_logo.svg" alt="chase logo" width={150} height={150}/>
-        </div>
-        <div className="col-span-1">
-          <Image src="/icons/wells_fargo_logo.svg" alt="chase logo" width={150} height={150}/>
-        </div>
-        <div className="col-span-1">
-          <Image src="/icons/bank_of_america_logo.svg" alt="chase logo" width={150} height={150}/>
-        </div>
-        <div className="col-span-1">
-          <Image src="/icons/td_bank_logo.svg" alt="chase logo" width={150} height={150}/>
-        </div>
-      </div>
+      <Banks/>
+      <FAQInfo/>
       <Footer/>
     </div>
   )

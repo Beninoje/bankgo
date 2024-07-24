@@ -21,6 +21,25 @@ export const sidebarLinks = [
   },
 ];
 
+export const faqInfo = [
+  {
+    title: 'Send Money',
+    description: 'Send money to your friends, pay bills, and more. Everything is fast and without commission.'
+  },
+  {
+    title: 'Receive Money',
+    description: 'Easily receive money from friends and family directly into your account. Enjoy quick and hassle-free transactions.'
+  },
+  {
+    title: 'Cash Back',
+    description: 'Earn cash back on eligible purchases. Save money while you spend, and track your rewards seamlessly.'
+  },
+  {
+    title: 'Connect Banks',
+    description: 'Securely connect your bank accounts to track spending, view balances, and manage your finances in one place.'
+  },
+];
+
 // good_user / good_password - Bank of America
 export const TEST_USER_ID = "6627ed3d00267aa6fa3e";
 
