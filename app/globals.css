@@ -7,6 +7,8 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Libre Baskerville", serif;
+}
+body{
   background-color: #f5f5f5;
 }
 /* Text/Fonts Color */
@@ -26,7 +28,17 @@
   font-weight: 700;
   font-style: normal;
 }
+/* CUSTOM CSS */
+.accordion{
+  border: #1A1A23 solid 2px;
+  box-shadow: 0px 4px 0px #1A1A23;
 
+}
+.accordion:hover{
+  background-color: #FF7E61 ;
+  transition: all 0.3s ease;
+  box-shadow:0px 0px 0px;
+}
 .text-color{
   color:#1A1A23;
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image';
 const Banks = () => {
   return (
-    <div className="grid grid-cols-4 place-items-center items-center pt-[50px] px-32">
+    <div className="grid grid-cols-4 place-items-center items-center p-32">
         <div className="col-span-1">
           <Image src="/icons/chase_logo.svg" alt="chase logo" width={150} height={150}/>
         </div>
