@@ -86,11 +86,17 @@ body{
   border-radius:100%;
   background-color: #F2F2F2;
   transition: all 0.3s ease;
+  outline:none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .pagination_btn:hover{
   background-color: #1A1A23;
+  color:#fff;
 }
+
 .progress {
   height: 100%;
   background: black;

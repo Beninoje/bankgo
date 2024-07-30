@@ -39,6 +39,8 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ name, occupation, review, profi
   
   const Carousel: React.FC<{ reviews: ReviewCardProps[] }> = ({ reviews }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [isHoverNext, setIsHoveredNext] = useState(false);
+    const [isHoverPrev, setIsHoveredPrev] = useState(false);
   
     const goToNextSlide = () => {
       setCurrentIndex((currentIndex + 1) % reviews.length);
@@ -66,12 +68,33 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ name, occupation, review, profi
                 ))}
             </div>
             <div className="controls px-10">
-                <button onClick={goToPreviousSlide} className='pagination_btn'>
-                    <Image src='/icons/arrow-left.svg' alt="" width={18} height={18}/>
-                </button>
-                <button onClick={goToNextSlide} className='pagination_btn'>
-                    <Image src='/icons/arrow-right.svg' alt="" width={18} height={18}/>
-                </button>
+                <button 
+                  onClick={goToPreviousSlide} 
+                  className="pagination_btn"
+                  onMouseEnter={() => setIsHoveredPrev(true)}
+                  onMouseLeave={() => setIsHoveredPrev(false)}
+                >
+                  {isHoverPrev ? (
+                    <Image src="/icons/arrow-left-hover.svg" alt="Previous" width={18} height={18}/>
+                  ): (
+                    <Image src="/icons/arrow-left.svg" alt="Previous" width={18} height={18}/>
+                  )}
+                  
+               </button>
+
+               <button 
+                  onClick={goToPreviousSlide} 
+                  className="pagination_btn"
+                  onMouseEnter={() => setIsHoveredNext(true)}
+                  onMouseLeave={() => setIsHoveredNext(false)}
+                >
+                  {isHoverNext ? (
+                    <Image src="/icons/arrow-right-hover.svg" alt="Previous" width={18} height={18}/>
+                  ): (
+                    <Image src="/icons/arrow-right.svg" alt="Previous" width={18} height={18}/>
+                  )}
+                  
+               </button>
             </div>
             <div className="pagination">
                 {reviews.map((_, index) => (

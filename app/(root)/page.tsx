@@ -7,6 +7,7 @@ import FAQInfo from '@/components/FAQInfo';
 import Banks from '@/components/Banks';
 import Reviews from '@/components/Reviews';
 import SwiperTest from '@/components/SwiperTest';
+import CashClearer from '@/components/CashClearer';
 
 const Home: React.FC= () => {
   return (
@@ -33,6 +34,7 @@ const Home: React.FC= () => {
       <Banks/>
       <FAQInfo/>
       <Reviews/>
+      <CashClearer/>
       <Footer/>
     </div>
   )
