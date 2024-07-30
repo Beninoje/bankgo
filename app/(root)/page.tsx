@@ -5,15 +5,17 @@ import Image from 'next/image';
 import React from 'react'
 import FAQInfo from '@/components/FAQInfo';
 import Banks from '@/components/Banks';
+import Reviews from '@/components/Reviews';
+import SwiperTest from '@/components/SwiperTest';
 
-const Home = () => {
+const Home: React.FC= () => {
   return (
     <div>
       <Header/>
       <div className="grid grid-cols-4 items-center container mx-auto px-8 pt-[100px]">
         <div className=" col-span-2 text-left flex flex-col items-start justify-start">
           <p className='text-sm text-[#6b6b6b]'>WELCOME TO BANKON</p>
-          <h1 className='text-color text-[60px] font-bold'>Bank that is<br></br> always online</h1>
+          <h1 className='text-color text-[60px] font-bold'>Bank That Is<br></br> Always Online</h1>
         </div>
         <div className="pt-4 col-span-2 ml-32">
           <p className='text-[20px]'>Bankon’s online banking allows to easily manage your funds and perfectly control your cash flow</p>
@@ -30,6 +32,7 @@ const Home = () => {
       </div>
       <Banks/>
       <FAQInfo/>
+      <Reviews/>
       <Footer/>
     </div>
   )

@@ -276,6 +276,15 @@ declare interface AccordionItemProps {
   title: string;
   description: string;
 }
+declare interface ReviewCardProps {
+  name: string;
+  occupation: string;
+  review: string;
+  profileURL: string;
+  workImgURL: string;
+  quoteSvg: string;
+  rating: string[];
+}
 declare interface CreateFundingSourceOptions {
   customerId: string; // Dwolla Customer ID
   fundingSourceName: string; // Dwolla Funding Source Name

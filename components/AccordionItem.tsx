@@ -11,9 +11,9 @@ const AccordionItem: React.FC<AccordionItemProps> = ({open,toggle,title,descript
     }, [open]);
   return (
         <div
-        className={ `py-3 px-5 rounded-[25px] cursor-pointer accordion ${open ? 'bg-[#FF7E61]' : 'bg-[#f5f5f5]'}`}
-            onClick={toggle}
-        >
+            className={ `py-3 px-5 rounded-[25px] cursor-pointer accordion ${open ? 'bg-[#FF7E61]' : 'bg-[#f5f5f5]'}`}
+                onClick={toggle}
+            >
         <div className="flex justify-between items-center">
             <h3 className="font-bold text-color text-[25px]">{title}</h3>
             <div
