@@ -83,7 +83,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ name, occupation, review, profi
                </button>
 
                <button 
-                  onClick={goToPreviousSlide} 
+                  onClick={goToNextSlide} 
                   className="pagination_btn"
                   onMouseEnter={() => setIsHoveredNext(true)}
                   onMouseLeave={() => setIsHoveredNext(false)}
