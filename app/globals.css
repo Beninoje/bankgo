@@ -111,6 +111,14 @@ body{
   background-color: #1A1A23;
   color:#fff;
 }
+.try_now{
+  border: 3px solid #e9e9eb;
+  border-radius:9999px;
+  width: 700px;
+  height: 700px;
+  margin-top:-500px;
+  padding-top: 450px;
+}
 .progress {
   height: 100%;
   background: black;
