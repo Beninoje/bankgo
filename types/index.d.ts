@@ -276,6 +276,11 @@ declare interface AccordionItemProps {
   title: string;
   description: string;
 }
+declare interface BlogComponentProps {
+  title:string;
+  imageURL:string;
+  preDesc:string;
+}
 declare interface ReviewCardProps {
   name: string;
   occupation: string;

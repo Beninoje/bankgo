@@ -118,6 +118,23 @@ export const reviewStats = [
     sign:"%"
   },
 ] 
+export const blogStats = [
+  {
+    imageURL: "/icons/unlock_insights.svg",
+    title:"Unlock Insights",
+    preDesc:"Discover financial opportunites"
+  },
+  {
+    imageURL: "/icons/dive_deeper.svg",
+    title:"Dive Deeper",
+    preDesc:"Explore detailed analytics"
+  },
+  {
+    imageURL: "/icons/spendage.svg",
+    title:"Success Drive",
+    preDesc:"Empower your investment journey"
+  }
+]
 // good_user / good_password - Bank of America
 export const TEST_USER_ID = "6627ed3d00267aa6fa3e";
 
