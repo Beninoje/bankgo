@@ -7,9 +7,9 @@ import FAQInfo from '@/components/FAQInfo';
 import Banks from '@/components/Banks';
 import Reviews from '@/components/Reviews';
 import CashClearer from '@/components/CashClearer';
-import Blog from './blog/page';
 import BlogReview from '@/components/BlogReview';
 import { TryNow } from '@/components/TryNow';
+import PennyProtected from '@/components/PennyProtected';
 
 const Home: React.FC= () => {
   return (
@@ -38,6 +38,7 @@ const Home: React.FC= () => {
       <Reviews/>
       <CashClearer/>
       <BlogReview/>
+      <PennyProtected/>
       <TryNow/>
       <Footer/>
     </div>

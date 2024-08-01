@@ -10,8 +10,8 @@ const imbPlexSerif = IBM_Plex_Serif({
 })
 
 export const metadata: Metadata = {
-  title: "bankgo",
-  description: "bankgo is a modern banking platform for everyone",
+  title: "bankon",
+  description: "bankon is a modern banking platform for everyone",
   icons:{
     icon:'/icons/logo.svg'
   }
