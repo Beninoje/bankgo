@@ -135,6 +135,35 @@ export const blogStats = [
     preDesc:"Empower your investment journey"
   }
 ]
+export const footerItemStats = [
+  {
+    title: "Company",
+    item1:"Blog",
+    link1:"/blog",
+    item2:"About Us",
+    link2:"/about-us",
+    item3:"Account",
+    link3:"/dashboard",
+  },
+  {
+    title: "Resources",
+    item1:"Document",
+    link1:"/document",
+    item2:"Papers",
+    link2:"/papers",
+    item3:"Press Conference",
+    link3:"/press-conference",
+  },
+  {
+    title: "Legal",
+    item1:"Terms of Services",
+    link1:"/terms-of-service",
+    item2:"Privacy Policy",
+    link2:"/privacy-policy",
+    item3:"Cookies Policy",
+    link3:"/cookies-policy",
+  }
+]
 // good_user / good_password - Bank of America
 export const TEST_USER_ID = "6627ed3d00267aa6fa3e";
 

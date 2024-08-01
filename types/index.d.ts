@@ -290,6 +290,15 @@ declare interface ReviewCardProps {
   quoteSvg: string;
   rating: string[];
 }
+declare interface FooterItemProps {
+  title:string | undefined;
+  item1:string | undefined;
+  link1:string;
+  item2:string | undefined;
+  link2:string;
+  item3:string | undefined;
+  link3:string;
+}
 declare interface CreateFundingSourceOptions {
   customerId: string; // Dwolla Customer ID
   fundingSourceName: string; // Dwolla Funding Source Name
