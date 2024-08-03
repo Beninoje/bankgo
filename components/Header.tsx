@@ -37,7 +37,7 @@ const Header = () => {
   
   return (
     <div className='px-3 py-4 w-full'>
-        <nav className={`nav_container ${isScrollingUp ? 'visible' : 'hidden'}`}>
+        <nav className={`nav_container ${isScrollingUp ? 'visible' : 'hidden'} ${isOpen ? 'open' : ''}`}>
         <Link href="/" className="flex gap-2 items-center">
           <Image src="/icons/logo.svg" width={30} height={30} alt="bankon logo" />
           <h1 className="text-color font-semibold text-[24px] tracking-wide">
@@ -51,7 +51,7 @@ const Header = () => {
             ))}
           </ul>
         </div>
-        <div className="auth_btn_container">
+        <div className={`auth_btn_container ${isOpen ? 'open': ''}`}>
           <Link href="/sign-in" className="mx-4">
             <span className="login_in_btn">Login</span>
           </Link>
