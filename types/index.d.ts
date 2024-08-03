@@ -281,6 +281,10 @@ declare interface BlogComponentProps {
   imageURL:string;
   preDesc:string;
 }
+declare interface HeaderLinkProps {
+  title:string;
+  link:string;
+}
 declare interface ReviewCardProps {
   name: string;
   occupation: string;

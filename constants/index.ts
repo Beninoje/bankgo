@@ -164,6 +164,24 @@ export const footerItemStats = [
     link3:"/cookies-policy",
   }
 ]
+export const headerLinks = [
+  {
+    title: "About Us",
+    link:'/about-us'
+  },
+  {
+    title: "Account",
+    link:'/dashboard'
+  },
+  {
+    title: "Blog",
+    link:'/blog'
+  },
+  {
+    title: "Reviews",
+    link:'/'
+  }
+]
 // good_user / good_password - Bank of America
 export const TEST_USER_ID = "6627ed3d00267aa6fa3e";
 
