@@ -37,7 +37,7 @@ const Footer = () => {
       </div>
       <div className="flex w-[90%] mx-auto py-8 justify-between">
         <div className="">
-          <p className=''>® 2024 bankon Inc. All rights reserved</p>
+          <p className=''>Copyright © 2024 bankon, Inc. All Rights Reserved.</p>
         </div>
         <div className="flex items-center gap-8">
           <Link 

@@ -3,8 +3,8 @@ import React from 'react'
 
 const HeaderLinks: React.FC<HeaderLinkProps> = ({title,link}) => {
   return (
-    <Link href={link}>
-        <p className='text-color text-[15px]'>{title}</p>
+    <Link href={link} className='text-color text-[15px] mobile_link'>
+        {title}
     </Link>
   )
 }
