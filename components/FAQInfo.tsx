@@ -13,7 +13,7 @@ const FAQInfo = () => {
       };
   return (
     <section className='bg-[#fff] py-[100px] px-8 '>
-        <div className="grid grid-cols-4 place-items-center  container mx-auto items-start">
+        <div className="grid grid-cols-4 place-items-center faq_section_container  container mx-auto items-start">
             <div className="col-span-2 w-full">
                 <h2 className='text-color font-bold text-[50px]'>
                     Beyond The<br></br> Business Banking Basics
@@ -25,7 +25,7 @@ const FAQInfo = () => {
                     </div>
                 </Link>
             </div>
-            <div className="col-span-2 w-full px-32 flex flex-col gap-10">
+            <div className="col-span-2 w-full accordion_container px-32 flex flex-col gap-10">
                 {faqInfo.map((item,i)=>{
                     return(
                         <AccordionItem

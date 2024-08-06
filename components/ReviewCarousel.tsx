@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const ReviewCard: React.FC<ReviewCardProps> = ({ name, occupation, review, profileURL, workImgURL, quoteSvg, rating }) => {
     return (
-      <div className="p-5 rounded-[15px] bg-[#fff] w-[900px] h-auto mx-auto">
+      <div className="review_card_container p-5 rounded-[15px] bg-[#fff] w-[900px] h-auto mx-auto">
         <div className="grid grid-cols-3">
             <div className="col-span-2 flex flex-col justify-evenly">
               <div className="flex items-start pr-10">
@@ -67,7 +67,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ name, occupation, review, profi
                     </div>
                 ))}
             </div>
-            <div className="controls px-10">
+            <div className="review_controls px-10">
                 <button 
                   onClick={goToPreviousSlide} 
                   className="pagination_btn"

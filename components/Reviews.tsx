@@ -27,7 +27,7 @@ const Reviews = () => {
             
             
         </div>
-        <div className="px-32">
+        <div className="px-32 review_container">
             <ReviewCarousel reviews={reviews} />
         </div>
        
