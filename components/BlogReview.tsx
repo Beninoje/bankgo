@@ -14,14 +14,13 @@ const BlogReview = () => {
   const secondBlogImage = blogStats.at(1);
   const thirdBlogImage = blogStats.at(2);
   return (
-    <div className=''>
-        <div className="py-[100px] px-32">
-            <div className="flex justify-center items-center w-full">
-                <div className="w-full">
+        <div className="py-[100px] px-32 blog_section">
+            <div className="flex justify-center items-center w-full blog_section_intro">
+                <div className="w-full blog_section_intro_title">
                   <h3 className='text-color font-bold text-[40px]'>Navigate. Analyze, Thrive:<br></br> 
                   Financial Dashboard</h3>
                 </div>
-                <div className="">
+                <div className="blog_section_intro_desc">
                   <p className='text-[20px]'>Explore financial possibilities, immerse yourself in data-driven insights, and actively shape your financial future</p>
                 </div>
             </div>
@@ -139,7 +138,6 @@ const BlogReview = () => {
               </div>
             </div>
         </div>
-    </div>
   )
 }
 

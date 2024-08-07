@@ -12,7 +12,7 @@ const Reviews = () => {
         <div className="">
             <h2 className='text-[50px] text-center font-bold'>Trust Us, <br></br>We Are Finanical Experts</h2>
         </div>
-        <div className="grid grid-cols-3 px-32 mt-12">
+        <div className="stats_container grid grid-cols-3 px-32 mt-12">
             {reviewStats.map((item)=>{
                 return(
                 <div className="col-span-1 p-3 flex flex-col items-center justify-center">

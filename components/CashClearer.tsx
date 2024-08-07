@@ -5,7 +5,7 @@ import Image from 'next/image'
 const CashClearer = () => {
   return (
     <div className='bg-[#fff]'>
-        <div className="py-[100px]">
+        <div className="py-[100px] px-16 cash_clearer_section">
             <div className="flex justify-around items-center w-full">
                 <div className="">
                     <h3 className='text-color font-bold text-[50px]'>Make Your Cash<br></br> Flow Clearer</h3>
@@ -16,8 +16,8 @@ const CashClearer = () => {
                         </div>
                     </Link>
                 </div>
-                <div className="">
-                    <Image src="/icons/cash_clear.svg" alt="" width={400} height={400}/>
+                <div className="cash_cleaer_img_container">
+                    <Image src="/icons/cash_clear.svg" alt="" width={400} height={400} className='cash_clearer_img'/>
                 </div>
                 
             </div>

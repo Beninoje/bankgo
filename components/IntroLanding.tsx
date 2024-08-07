@@ -10,7 +10,7 @@ const IntroLanding = () => {
               <p className='text-sm text-[#6b6b6b] font-semibold'>WELCOME TO BANKON</p>
               <h1 className='text-color text-[60px] font-bold'>Bank That Is<br></br> Always Online</h1>
             </div>
-            <div className="pt-4 col-span-2 ml-32">
+            <div className="pt-4 col-span-2 ml-32 intro_landing_desc">
               <p className='text-[20px]'>Bankon’s online banking allows to easily manage your funds and perfectly control your cash flow</p>
               <Link href="/sign-in" className='bg-[#1A1A23] py-[9px] pl-6 pr-3 w-[200px] rounded-full  flex items-center justify-between mt-4'>
                   <p className='text-white text-left bg-transparent tracking-wide'>Open an account</p>

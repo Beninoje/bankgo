@@ -37,7 +37,7 @@ const Header = () => {
   }, [isOpen]);
   
   return (
-    <div className='px-3 py-4 w-full'>
+    <header className='px-3 py-4 w-full m_header'>
         <nav className={`nav_container ${isScrollingUp ? 'visible' : 'hidden'} ${isOpen ? 'open' : ''}`}>
         <Link href="/" className="flex gap-2 items-center">
           <Image src="/icons/logo.svg" width={30} height={30} alt="bankon logo" />
@@ -121,7 +121,7 @@ const Header = () => {
         </div>
         
       </nav>
-    </div>
+    </header>
   )
 }
 

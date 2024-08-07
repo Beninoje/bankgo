@@ -11,7 +11,7 @@ export function TryNow() {
       <ContainerScroll
         titleComponent={
           <>
-            <h1 className="text-[200px] font-bold text-color mb-[-40px]">
+            <h1 className="text-[200px] end_title text-center font-bold text-color">
                 bank<span className="text-[#FF7E61]">on</span> 
             </h1>
           </>
@@ -27,7 +27,7 @@ export function TryNow() {
         />
       </ContainerScroll>
       <div className="try_now mx-auto text-center">
-        <Link href="/sign-in" className="text-color font-bold text-[50px]">Try Now</Link>
+        <Link href="/sign-in" className="text-color font-bold text-[50px] text-center try_now_desc">Try Now</Link>
         <p className="text-[#8B8BAA]">Experience our dashboard firsthand</p>
       </div>
     </div>

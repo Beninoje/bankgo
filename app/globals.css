@@ -332,7 +332,16 @@ h6 {
   justify-content: center;
   gap: 2rem; 
 }
+.nav_container{
+  border-bottom: 1px solid #dfdfdf;
+}
 /*!==============HEADER===============*/
+.every_p_btn_m{
+  display: none;
+}
+.review_controllers_mobile{
+  display:none
+}
 /*!==============RESPONSIVE===============*/
 @media(max-width:1450px) {
   .landing_container{
@@ -349,14 +358,27 @@ h6 {
   .review_controls{
 
   }
+  .blog_section{
+    @apply px-16
+  }
   .review_container{
     @apply px-8
+  }
+  .every_p_container{
+    @apply px-16
   }
 
 }
 @media(max-width:1250px) {
   .nav_list{
     gap:2rem;
+  }
+  .blog_section_intro{
+    flex-direction: column;
+    align-items: start;
+  }
+  .blog_section_intro_desc{
+    padding-top: 30px;
   }
   .banks_landing_container{
     padding-left: 2rem !important;
@@ -383,12 +405,45 @@ h6 {
     padding-right: 2rem !important;
   }
   .review_controls{
-    justify-content: end !important;
-    top:95% !important;
-    width: 100%;
-    right:0 !important;
+    display:none !important;
+  }
+  .review_controllers_mobile{
+    @apply pr-20 flex gap-4
+  }
+  .reviews_container{
 
+  }
+  .progress-bar{
+    position: relative !important;
+    width: 100% !important;
+  }
+  .every_p_container{
+    flex-direction:column;
+  }
+  .every_p_desc{
+    align-items: start;
+    text-align: left;
+    padding-top: 20px;
+  }
+  .every_p_btn{
+    display: none;
+  }
+  .every_p_btn_m{
+    display:flex;
+  }
+  .try_now{
+    width: 500px !important;
+    height: 500px !important;
+    padding-top: 300px !important;
     
+  }
+  .end_title{
+    font-size:150px;
+    margin-bottom: -100px !important;
+  }
+  .try_now_desc{
+    z-index:9998 !important;
+    position: relative;
   }
   /* .pagination{
     display: flex !important;
@@ -408,7 +463,43 @@ h6 {
     @apply px-0 pt-[70px]
   }
 }
-
+@media (max-width: 860px) {
+  .landing_container{
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    @apply ml-0
+  }
+  .intro_landing_desc{
+    @apply ml-0
+  }
+  .work_image{
+    @apply h-[100%] w-[100%] object-cover
+  }
+  .stats_container{
+    @apply px-8
+  }
+  .review_desc{
+    font-size:12px;
+  }
+  .review_profile_container{
+    @apply pl-0 pr-8
+  }
+  .review_card_container {
+    width: 600px !important;
+    
+  }
+  .cash_clearer_img{
+    width: 300px;
+  }
+}
+@media (max-width: 768px) {
+  .work_image{
+    display:none;
+    width:100%;
+  }
+  .review_desc_container{
+    @apply col-span-3
+  }
+}
 /*!==============RESPONSIVE===============*/
 
 /*! CUSTOM CSS */
