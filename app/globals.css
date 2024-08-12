@@ -413,6 +413,24 @@ h6 {
   .reviews_container{
 
   }
+  /* .cash_clearer_container{
+    flex-direction: column;
+    align-items: start;
+  } */
+  /* .cash_clearer_desc{
+    order:1 !important;
+    @apply pt-4
+  }
+  .cash_clearer_img_container{
+    order:0 !important;
+  } */
+   .cash_clearer_section{
+    @apply px-8
+   }
+   .blog_section{
+    @apply px-8
+   }
+   
   .progress-bar{
     position: relative !important;
     width: 100% !important;
@@ -496,8 +514,39 @@ h6 {
     display:none;
     width:100%;
   }
+  .footer_container{
+    flex-wrap: wrap;
+  }
+  .footer_item{
+    flex-basis: 50% !important;
+    @apply pt-10
+  }
+  .every_p_desc{
+    @apply pr-20
+  }
+  .account_card_img{
+    @apply w-[400px]
+  }
   .review_desc_container{
     @apply col-span-3
+  }
+  .every_p_desc{
+    @apply pt-10
+  }
+  .every_p_container{
+    @apply px-8
+  }
+  .landing_container{
+    @apply px-8
+  }
+  .blog_title_landing{
+    @apply text-[25px]
+  }
+  .blog_desc_landing{
+    @apply text-[15px]
+  }
+  .faq_section{
+    @apply px-0
   }
 }
 /*!==============RESPONSIVE===============*/

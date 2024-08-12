@@ -11,10 +11,8 @@ const Footer = () => {
   const [isHoverLI, setIsHoveredLI] = useState(false);
   return (
     <footer className='pt-32 '>
-
-        
-        <div className="flex justify-between items-center w-[90%] mx-auto pb-10">
-          <div className="">
+        <div className="footer_container flex justify-between items-center w-[90%] mx-auto pb-10">
+          <div className="footer_item">
             <Link href="/">
               <img src="/icons/footer_logo.svg" alt="" className='w-[200px]'/>
             </Link>

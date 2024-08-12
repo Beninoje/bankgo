@@ -31,8 +31,8 @@ const BlogReview = () => {
                 </div>
                 <div className="col-span-3 pl-[30px]">
                     <LinkPreview url="/blog" className='' imageSrc="/icons/unlock_insights.svg" isStatic>
-                      <h3 className='font-semibold text-[35px]'>{blogStats.at(0)?.title}</h3>
-                      <p className='text-[18px]'>{blogStats.at(0)?.preDesc}</p>
+                      <h3 className='font-semibold blog_title_landing text-[35px]'>{blogStats.at(0)?.title}</h3>
+                      <p className='text-[18px] blog_desc_landing'>{blogStats.at(0)?.preDesc}</p>
                     </LinkPreview>
                 </div>
                 <div className="col-span-1 flex justify-end">
@@ -69,8 +69,8 @@ const BlogReview = () => {
                 </div>
                 <div className="col-span-3 pl-[30px]">
                     <LinkPreview url="/blog" className='' imageSrc="/icons/dive_deeper.svg" isStatic>
-                    <h3 className='font-semibold text-[35px]'>{blogStats.at(1)?.title}</h3>
-                    <p className='text-[18px]'>{blogStats.at(1)?.preDesc}</p>
+                    <h3 className='font-semibold blog_title_landing text-[35px]'>{blogStats.at(1)?.title}</h3>
+                    <p className='text-[18px] blog_desc_landing'>{blogStats.at(1)?.preDesc}</p>
                     </LinkPreview>
                 </div>
                 <div className="col-span-1 flex justify-end">
@@ -107,8 +107,8 @@ const BlogReview = () => {
                 </div>
                 <div className="col-span-3 pl-[30px]">
                     <LinkPreview url="/blog" className='' imageSrc="/icons/spendage.svg" isStatic>
-                        <h3 className='font-semibold text-[35px]'>{blogStats.at(2)?.title}</h3>
-                        <p className='text-[18px]'>{blogStats.at(2)?.preDesc}</p>
+                        <h3 className='font-semibold blog_title_landing text-[35px]'>{blogStats.at(2)?.title}</h3>
+                        <p className='text-[18px] blog_desc_landing'>{blogStats.at(2)?.preDesc}</p>
                     </LinkPreview>
                 </div>
                 <div className="col-span-1 flex justify-end">
