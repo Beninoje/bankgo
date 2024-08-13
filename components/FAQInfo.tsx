@@ -15,7 +15,7 @@ const FAQInfo = () => {
     <section className='bg-[#fff] py-[100px] px-8 faq_section'>
         <div className="grid grid-cols-4 place-items-center faq_section_container  container mx-auto items-start">
             <div className="col-span-2 w-full">
-                <h2 className='text-color font-bold text-[50px]'>
+                <h2 className='text-color main_header_title font-bold text-[50px]'>
                     Beyond The<br></br> Business Banking Basics
                 </h2>
                 <Link href="/sign-in" className='bg-[#1A1A23] py-[9px] pl-6 pr-3 w-[170px] rounded-full  flex items-center justify-between mt-10'>

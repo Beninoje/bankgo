@@ -17,7 +17,7 @@ const BlogReview = () => {
         <div className="py-[100px] px-32 blog_section">
             <div className="flex justify-center items-center w-full blog_section_intro">
                 <div className="w-full blog_section_intro_title">
-                  <h3 className='text-color font-bold text-[40px]'>Navigate. Analyze, Thrive:<br></br> 
+                  <h3 className='text-color main_header_title font-bold text-[40px]'>Navigate. Analyze, Thrive:<br></br> 
                   Financial Dashboard</h3>
                 </div>
                 <div className="blog_section_intro_desc">

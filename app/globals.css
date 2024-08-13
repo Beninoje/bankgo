@@ -335,6 +335,9 @@ h6 {
 .nav_container{
   border-bottom: 1px solid #dfdfdf;
 }
+.mobile_auth_container{
+  display: none !important;
+}
 /*!==============HEADER===============*/
 .every_p_btn_m{
   display: none;
@@ -413,17 +416,7 @@ h6 {
   .reviews_container{
 
   }
-  /* .cash_clearer_container{
-    flex-direction: column;
-    align-items: start;
-  } */
-  /* .cash_clearer_desc{
-    order:1 !important;
-    @apply pt-4
-  }
-  .cash_clearer_img_container{
-    order:0 !important;
-  } */
+  
    .cash_clearer_section{
     @apply px-8
    }
@@ -460,7 +453,7 @@ h6 {
     margin-bottom: -100px !important;
   }
   .try_now_desc{
-    z-index:9998 !important;
+    z-index:10 !important;
     position: relative;
   }
   /* .pagination{
@@ -547,6 +540,110 @@ h6 {
   }
   .faq_section{
     @apply px-0
+  }
+}
+@media (max-width: 660px) {
+  .review_card_container {
+    width: 400px !important;
+  }
+  .review_container{
+    justify-content: start !important;
+    @apply px-0 
+  }
+  .review_vector{
+    justify-content: center !important;
+    width: 100%;
+  }
+  .review_vector_img{
+    width: 150px;
+  }
+  .review_quote{
+    width: 35px !important;
+  }
+  .review_desc{
+    @apply pl-4 pb-4
+  }
+  .rating_container{
+    display:none;
+  }
+  .review_desc_container{
+    align-items: start;
+  }
+  .main_desc{
+    font-size: 15px !important;
+  }
+  .intro_image_container{
+    @apply px-6
+  }
+  .main_header_title{
+    font-size: 40px !important;
+  }
+  .intro_image_container {
+    @apply mt-20
+  }
+  .auth_btn_container{
+    display:none !important;
+  }
+  .mobile_auth_container{
+    display: flex !important;
+  }
+  .cash_clearer_container{
+    flex-direction: column;
+    align-items: start;
+  }
+   .cash_clearer_desc{
+    order:1 !important;
+    @apply pt-4
+  }
+  .cash_clearer_img_container{
+    order:0 !important;
+  }
+  .stats_container {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+@media (max-width: 600px) {
+  .try_now {
+    width: 300px !important;
+    height: 300px !important;
+    margin-top: -350px !important;
+    padding-top: 0 !important;
+    margin-bottom:50px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    padding-bottom: 50px;;
+  }
+  .end_title {
+    font-size:100px
+  }
+  .try_now_desc{
+    font-size:30px !important;
+  } 
+  .try_now_l_desc{
+    font-size:15px ;
+    @apply px-10
+  }
+}
+@media (max-width: 425px) {
+  .mobile_privacy_container{
+    flex-direction: column;
+  }
+  .bullet_mobile{
+    display: none;
+  }
+  .footer_item{
+    flex-basis: 100% !important;
+  }
+  .footer_ending_credits{
+    flex-direction: column;
+    gap:20px;
+  }
+  .banks_landing_container {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap:20px;
+    @apply py-20
   }
 }
 /*!==============RESPONSIVE===============*/

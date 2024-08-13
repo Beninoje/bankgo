@@ -64,7 +64,15 @@ const Header = () => {
                 <HeaderMobileLinks key={i} title={item.title} link={item.link} />
               ))}
             </ul>
-            <div className="flex gap-4 items-center pt-[20px]">
+            <div className="flex justify-center gap-4 mobile_auth_container py-4">
+              <Link href="/sign-up" className="sign_up_btn">
+                Get Started
+              </Link>
+              <Link href="/sign-in" className="mx-4 login_btn">
+                <span className="login_in_btn">Login</span>
+              </Link>
+            </div>
+            <div className="flex gap-4 mobile_privacy_container items-center pt-[20px]">
               <Link href="/" className='mobile_link_terms'>
                 Privacy Policy
               </Link>

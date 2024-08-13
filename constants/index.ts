@@ -43,7 +43,7 @@ export const reviews = [
   {
     name: "Sarah J.",
     occupation: "Marketing Manager",
-    review: "I’ve been using Bankon for the past six months, and it has completely transformed the way I manage my finances. As someone who juggles multiple bank accounts and credit cards, keeping track of my spending and savings used to be a daunting task. Bankon simplifies everything with its intuitive interface and real-time updates. It’s become an essential tool for staying organized and on top of my financial goals.",
+    review: "I’ve been using Bankon for the past six months, and it has completely transformed the way I manage my finances. As someone who juggles multiple bank accounts and credit cards, keeping track of my spending and savings used to be a daunting task.",
     profileURL:'/icons/sarah_profile.svg',
     workImgURL: '/icons/work_1.svg',
     quoteSvg: '/icons/quote_svg.svg',
@@ -58,7 +58,7 @@ export const reviews = [
   {
     name: "Michael T.",
     occupation: "Software Developer",
-    review: "Bankon has been a lifesaver for me! I manage several bank accounts and credit cards, and before Bankon, tracking my finances was a hassle. The app’s seamless integration and detailed reporting features make it easy to see where my money is going and how I can improve my savings. It’s incredibly user-friendly and has made budgeting so much more manageable.",
+    review: "Bankon has been a lifesaver for me! I manage several bank accounts and credit cards, and before Bankon, tracking my finances was a hassle. The app’s seamless integration and detailed reporting features make it easy to see where my money is going and how I can improve my savings.",
     profileURL:'/icons/micheal_profile.svg',
     workImgURL: '/icons/work_2.svg',
     quoteSvg: '/icons/quote_svg.svg',
@@ -73,7 +73,7 @@ export const reviews = [
   {
     name: "Richard R.",
     occupation: "Freelance Graphic Designer",
-    review: "Using Bankon has been a game-changer for my financial management. I used to struggle with keeping track of my various accounts and transactions, but Bankon has streamlined the process with its excellent dashboard and expense tracking. The ability to categorize and analyze my spending has helped me make smarter financial decisions. I highly recommend it to anyone looking to get their finances in order.",
+    review: "Using Bankon has been a game-changer for my financial management. I used to struggle with keeping track of my various accounts and transactions, but Bankon has streamlined the process with its excellent dashboard and expense tracking. The ability to categorize and analyze my spending has helped me make smarter financial decisions.",
     profileURL:'/icons/richard_profile.svg',
     workImgURL: '/icons/work_3.svg',
     quoteSvg: '/icons/quote_svg.svg',
@@ -88,7 +88,7 @@ export const reviews = [
   {
     name: "David M.",
     occupation: "Financial Analyst",
-    review: "I’m impressed with how Bankon has simplified my financial life. With multiple accounts and credit cards, I needed a tool that could handle it all, and Bankon delivers. The app’s features are robust, providing clear insights into my spending patterns and helping me stay on track with my savings goals. It’s intuitive, reliable, and has made managing my money so much easier.",
+    review: "I’m impressed with how Bankon has simplified my financial life. With multiple accounts and credit cards, I needed a tool that could handle it all, and Bankon delivers. The app’s features are robust, providing clear insights into my spending patterns and helping me stay on track with my savings goals.",
     profileURL:'/icons/david_profile.svg',
     workImgURL: '/icons/work_4.svg',
     quoteSvg: '/icons/quote_svg.svg',

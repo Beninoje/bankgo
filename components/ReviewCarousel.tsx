@@ -8,13 +8,13 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ name, occupation, review, profi
     return (
       <div className="review_card_container p-5 rounded-[15px] bg-[#fff] w-[900px] h-auto mx-auto" >
         <div className="grid grid-cols-3">
-            <div className="col-span-2 review_desc_container flex flex-col justify-evenly">
+            <div className="col-span-2 review_desc_container  flex flex-col justify-evenly">
               <div className="flex items-start pr-10">
-                <img src={quoteSvg} alt="" />
+                <img src={quoteSvg} className='review_quote' alt="" />
                 <p className='review_desc w-full pl-10'>{review}</p>
               </div>
-              <div className="flex justify-center w-full">
-                <img src='/icons/reviewVector.svg' alt="" />
+              <div className="flex justify-center w-full review_vector">
+                <img src='/icons/reviewVector.svg' alt="" className='review_vector_img' />
               </div>
               <div className="review_profile_container flex justify-between px-10">
                 <div className="flex">
@@ -24,7 +24,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ name, occupation, review, profi
                         <p>{occupation}</p>
                     </div>
                 </div>
-                <div className="flex gap-3">
+                <div className="flex rating_container gap-3">
                     {rating.map((url,index)=>(
                         <img key={index} src={url} alt="rating icon" className='w-[20px]' />
                     ))}

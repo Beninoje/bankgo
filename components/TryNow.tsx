@@ -28,7 +28,7 @@ export function TryNow() {
       </ContainerScroll>
       <div className="try_now mx-auto text-center">
         <Link href="/sign-in" className="text-color font-bold text-[50px] text-center try_now_desc">Try Now</Link>
-        <p className="text-[#8B8BAA]">Experience our dashboard firsthand</p>
+        <p className="text-[#8B8BAA] try_now_l_desc">Experience our dashboard firsthand</p>
       </div>
     </div>
   );

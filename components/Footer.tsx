@@ -33,7 +33,7 @@ const Footer = () => {
       </div>
       <div className="h-[2px] bg-[#D1D1D1] w-[90%] mx-auto">
       </div>
-      <div className="flex w-[90%] mx-auto py-8 justify-between">
+      <div className="flex w-[90%] footer_ending_credits mx-auto py-8 justify-between">
         <div className="">
           <p className=''>Copyright © 2024 bankon, Inc. All Rights Reserved.</p>
         </div>

@@ -10,7 +10,7 @@ const Reviews = () => {
   return (
     <div className='py-[100px]'>
         <div className="">
-            <h2 className='text-[50px] text-center font-bold'>Trust Us, <br></br>We Are Finanical Experts</h2>
+            <h2 className='text-[50px] main_header_title text-center font-bold'>Trust Us, <br></br>We Are Finanical Experts</h2>
         </div>
         <div className="stats_container grid grid-cols-3 px-32 mt-12">
             {reviewStats.map((item)=>{
