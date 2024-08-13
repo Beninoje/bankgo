@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.1",
     "@radix-ui/react-hover-card": "^1.1.1",
     "@radix-ui/react-slot": "^1.1.0",
     "@use-gesture/react": "^10.3.1",

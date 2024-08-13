@@ -1,7 +1,5 @@
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
-import Link from 'next/link';
-import Image from 'next/image';
 import React from 'react'
 import FAQInfo from '@/components/FAQInfo';
 import Banks from '@/components/Banks';

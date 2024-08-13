@@ -1,3 +1,4 @@
+import SideBar from "@/components/SideBar";
 
 
 export default function RootLayout({
@@ -7,6 +8,7 @@ export default function RootLayout({
 }>) {
   return (
     <main>
+
         {children}
     </main>
   );
