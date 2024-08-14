@@ -4,10 +4,11 @@ import TotalBalanceBox from '@/components/TotalBalanceBox'
 import React from 'react'
 import Image from 'next/image'
 import MobileNav from '@/components/MobileNav'
+import RightSideBar from '@/components/RightSideBar'
 
 
 const Dashboard = () => {
-  const loggedIn = {firstName:'Beni', lastName:'Noje'}
+  const loggedIn = {firstName:'Beni', lastName:'Noje', email: 'beninoje@gmail.com'}
   return (
     <section className="flex flex-col">
           <div className="flex size-full flex-col">
@@ -21,7 +22,6 @@ const Dashboard = () => {
             </div>
         <div className="flex h-screen w-full">
             <SideBar user={loggedIn}/>
-            
             <div className='home'>
               <div className="home-content">
                 <header className="home-header">
@@ -38,9 +38,17 @@ const Dashboard = () => {
                     totalCurrentBalance={1250.32}
                   />
                 </header>
+                RECENT TRANSACTIONS
               </div>
             </div>
+            <RightSideBar
+              user={loggedIn}
+              transactions={[]}
+              banks={[{currentBalance:123.50},{currentBalance:500.50}]}
+            />
+
           </div>
+          
     </section>
     
   )
