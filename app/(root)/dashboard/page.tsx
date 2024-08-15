@@ -5,10 +5,13 @@ import React from 'react'
 import Image from 'next/image'
 import MobileNav from '@/components/MobileNav'
 import RightSideBar from '@/components/RightSideBar'
+import { getLoggedInUser } from '@/lib/actions/user.actions'
+import { redirect } from 'next/navigation'
 
 
-const Dashboard = () => {
-  const loggedIn = {firstName:'Beni', lastName:'Noje', email: 'beninoje@gmail.com'}
+const Dashboard = async () => {
+  const loggedIn = await getLoggedInUser();
+  if(!loggedIn) redirect('/sign-in');
   return (
     <section className="flex flex-col">
           <div className="flex size-full flex-col">
@@ -28,7 +31,7 @@ const Dashboard = () => {
                   <DashboardHeader
                     type="greeting"
                     title="Welcome"
-                    user={loggedIn?.firstName || 'Guest'}
+                    user={loggedIn?.name || 'Guest'}
                     subtext="Access and manage your account and transactions efficiently"
                   />
 
