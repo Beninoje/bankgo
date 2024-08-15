@@ -13,12 +13,13 @@ import { Loader2 } from 'lucide-react'
 import { authformSchema } from '@/lib/utils'
 import CustomFormInputs from './CustomFormInputs'
 import { useRouter } from 'next/navigation'
-import { signIn, signUp } from '@/lib/actions/user.actions'
+import { getLoggedInUser, signIn, signUp } from '@/lib/actions/user.actions'
 
 const AuthForm = ({type}: {type:string}) => {
     const [user,setUser] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
     const formSchema = authformSchema(type);
+    
     const router = useRouter();
     // 1. Define your form.
     const form = useForm<z.infer<typeof formSchema>>({
@@ -39,8 +40,8 @@ const AuthForm = ({type}: {type:string}) => {
             //sign up with Appwrite & create plaid token
             if(type=== 'sign-up')
             {
-                // const newUswer = await signUp(data);
-                // setUser(newUser);
+                const newUser = await signUp(data);
+                setUser(newUser);
                 // const userData={
                 //     firstName: data.firstName,
                 //     lastName: data.lastName,
@@ -52,6 +53,7 @@ const AuthForm = ({type}: {type:string}) => {
                 //     email:data.email,
                 //     password: data.password
                 // }
+                // router.push('/dashboard')
             }
             if(type=== 'sign-in')
             {
@@ -61,7 +63,7 @@ const AuthForm = ({type}: {type:string}) => {
                 // })
                 // if(response)
                 // {
-                //     router.push('/dashboard')
+                
                 // }
             }
         } catch (error) {
