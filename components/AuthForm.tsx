@@ -14,6 +14,7 @@ import { authformSchema } from '@/lib/utils'
 import CustomFormInputs from './CustomFormInputs'
 import { useRouter } from 'next/navigation'
 import { getLoggedInUser, signIn, signUp } from '@/lib/actions/user.actions'
+import PlaidLink from './PlaidLink'
 
 const AuthForm = ({type}: {type:string}) => {
     const [user,setUser] = useState(null);
@@ -37,13 +38,25 @@ const AuthForm = ({type}: {type:string}) => {
 
         console.log(data);
         try {
-            //sign up with Appwrite & create plaid token
+            //! Sign up with Appwrite & create plaid token
+            
             if(type === 'sign-up')
             {
-                const newUser = await signUp(data);
+                const userData = {
+                    firstName: data.firstName!,
+                    lastName: data.lastName!,
+                    address1: data.address1!,
+                    state: data.state!,
+                    city: data.city!,
+                    postalCode: data.postalCode!,
+                    dateOfBirth: data.dateOfBirth!,
+                    ssn: data.ssn!,
+                    email: data.email,
+                    password: data.password
+                  }
+                const newUser = await signUp(userData);
                 setUser(newUser);
 
-                // router.push('/dashboard')
             }
             if(type === 'sign-in')
             {
@@ -94,9 +107,9 @@ const AuthForm = ({type}: {type:string}) => {
         </header>
         {user ? (
             <div className="flex flex-col gap-4">
-                {/* PlaidLink */}
+                <PlaidLink user={user} variant='primary'/>
             </div>
-        ) : (
+         ) : (
             <>
                 <Form {...form}>
                     <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
@@ -108,6 +121,7 @@ const AuthForm = ({type}: {type:string}) => {
                             </div>
                                 
                                 <CustomFormInputs control={form.control} name='address1' label="Address" placeholder='Enter your specific address'/>
+                                <CustomFormInputs control={form.control} name='city' label="City" placeholder='Enter your city'/>
                             <div className="flex gap-4">
                                 <CustomFormInputs control={form.control} name='state' label="State" placeholder='Example: ON'/>
                                 <CustomFormInputs control={form.control} name='postalCode' label="Postal Code" placeholder='Example: M3A'/>
