@@ -14,7 +14,8 @@ import { parseStringify } from "../utils";
 
 // import { getTransactionsByBankId } from "./transaction.actions";
 import { getBanks, getBank } from "./user.actions";
-import { Bank, getAccountProps, getAccountsProps } from "@/types";
+import { Bank, getAccountProps, getAccountsProps, Transaction } from "@/types";
+import { getTransactionsByBankId } from "./transaction.action";
 
 // Get multiple bank accounts
 export const getAccounts = async ({ userId }: getAccountsProps) => {

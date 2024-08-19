@@ -9,9 +9,11 @@ import { getLoggedInUser } from '@/lib/actions/user.actions'
 import { redirect } from 'next/navigation'
 import { getAccount, getAccounts } from '@/lib/actions/bank.actions'
 import { SearchParamProps } from '@/types'
+import RecentTransactions from '@/components/RecentTransactions'
 
 
 const Dashboard = async ({ searchParams: {id, page }}: SearchParamProps) => {
+  const currentPage = Number(page as string) || 1;
   const loggedIn = await getLoggedInUser();
   const accounts = await getAccounts({ 
     userId: loggedIn.$id 
@@ -60,7 +62,12 @@ const Dashboard = async ({ searchParams: {id, page }}: SearchParamProps) => {
                     totalCurrentBalance={accounts?.totalCurrentBalance}
                   />
                 </header>
-                RECENT TRANSACTIONS
+                <RecentTransactions
+                  accounts={accountsData}
+                  transactions={account?.transactions}
+                  appwriteItemId={appwriteItemId}
+                  page={currentPage}
+                />
               </div>
             </div>
             <RightSideBar
