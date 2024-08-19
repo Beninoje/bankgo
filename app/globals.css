@@ -963,7 +963,7 @@ h6 {
   }
 
   .transactions-header {
-    @apply flex w-full flex-col items-start justify-between gap-8 md:flex-row;
+    @apply flex w-full items-start justify-between gap-8 md:flex-row;
   }
 
   .transactions-account {

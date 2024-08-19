@@ -5,6 +5,7 @@ import { sidebarLinks } from '@/constants';
 import { cn } from '@/lib/utils';
 import { usePathname } from 'next/navigation';
 import DashboardFooter from './DashboardFooter';
+import PlaidLink from './PlaidLink';
 
 const SideBar = ({user}:SiderbarProps) => {
     const pathName = usePathname();
@@ -42,7 +43,7 @@ const SideBar = ({user}:SiderbarProps) => {
                     </Link>
                 )
             })}
-            USER
+            <PlaidLink user={user} />
         </nav>
         <DashboardFooter user={user} type="desktop"/>
     </section>
