@@ -7,10 +7,29 @@ import MobileNav from '@/components/MobileNav'
 import RightSideBar from '@/components/RightSideBar'
 import { getLoggedInUser } from '@/lib/actions/user.actions'
 import { redirect } from 'next/navigation'
+import { getAccount, getAccounts } from '@/lib/actions/bank.actions'
+import { SearchParamProps } from '@/types'
 
 
-const Dashboard = async () => {
+const Dashboard = async ({ searchParams: {id, page }}: SearchParamProps) => {
   const loggedIn = await getLoggedInUser();
+  const accounts = await getAccounts({ 
+    userId: loggedIn.$id 
+  });
+
+  if(!accounts) return;
+
+  const accountsData = accounts?.data;
+  const appwriteItemId = (id as string) || accountsData[0]?.appwriteItemId;
+
+  const account  = await getAccount({ appwriteItemId });
+
+  console.log({
+    accountsData,
+    account
+  });
+  
+
   if(!loggedIn) redirect('/sign-in');
   return (
     <section className="flex flex-col">
@@ -25,20 +44,20 @@ const Dashboard = async () => {
             </div>
         <div className="flex h-screen w-full">
             <SideBar user={loggedIn}/>
-            <div className='home'>
+          <div className='home'>
               <div className="home-content">
                 <header className="home-header">
                   <DashboardHeader
                     type="greeting"
                     title="Welcome"
-                    user={loggedIn?.name || 'Guest'}
+                    user={loggedIn?.firstName || 'Guest'}
                     subtext="Access and manage your account and transactions efficiently"
                   />
 
                   <TotalBalanceBox
-                    accounts={[]}
-                    totalBanks={1}
-                    totalCurrentBalance={1250.32}
+                    accounts={accountsData}
+                    totalBanks={accounts?.totalBanks}
+                    totalCurrentBalance={accounts?.totalCurrentBalance}
                   />
                 </header>
                 RECENT TRANSACTIONS
@@ -46,8 +65,8 @@ const Dashboard = async () => {
             </div>
             <RightSideBar
               user={loggedIn}
-              transactions={[]}
-              banks={[{currentBalance:123.50},{currentBalance:500.50}]}
+              transactions={accounts?.transactions}
+              banks={accountsData?.slice(0,2)}
             />
 
           </div>

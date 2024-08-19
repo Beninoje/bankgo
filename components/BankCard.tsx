@@ -1,4 +1,5 @@
 import { formatAmount } from '@/lib/utils'
+import { CreditCardProps } from '@/types'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -10,7 +11,7 @@ const BankCard = ({account, userName, showBalance = true}: CreditCardProps) => {
            <div className="bank-card_content">
                 <div className="">
                     <h1 className="text-16 font-semibold text-white">
-                        {account.name || userName}
+                        {account.firstName || userName}
                     </h1>
                     <p className="font-black text-white">
                         {formatAmount(account.currentBalance )}
