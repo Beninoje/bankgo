@@ -42,8 +42,7 @@ const Dashboard = async ({ searchParams: {id, page }}: SearchParamProps) => {
                   <MobileNav user={loggedIn}/>
                 </div>
               </div>
-              
-            </div>
+          </div>
         <div className="flex h-screen w-full">
             <SideBar user={loggedIn}/>
           <div className='home'>
