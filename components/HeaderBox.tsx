@@ -9,7 +9,7 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 
-const TransactionHeaderBox = ({type="title",title, subtext,user}:HeaderBoxProps) => {
+const HeaderBox = ({type="title",title, subtext,user}:HeaderBoxProps) => {
   return (
     <div className="header-box">
       <h1 className="header-box-title">
@@ -25,4 +25,4 @@ const TransactionHeaderBox = ({type="title",title, subtext,user}:HeaderBoxProps)
   )
 }
 
-export default TransactionHeaderBox
+export default HeaderBox

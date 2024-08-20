@@ -2,7 +2,6 @@
 
 import MobileNav from '@/components/MobileNav';
 import SideBar from '@/components/SideBar';
-import TransactionHeaderBox from '@/components/TransactionHeaderBox';
 import { getAccount, getAccounts } from '@/lib/actions/bank.actions';
 import { getLoggedInUser } from '@/lib/actions/user.actions';
 import Image from 'next/image';
@@ -13,6 +12,7 @@ import { Account, SearchParamProps } from '@/types';
 import TransactionsTable from '@/components/TransactionsTable';
 import SelectTransactionBox from '@/components/SelectTransactionBox';
 import { formatAmount } from '@/lib/utils';
+import HeaderBox from '@/components/HeaderBox';
 
 const TransactionHistory = async ({ searchParams: { id, page } }: SearchParamProps) => {
     const currentPage = Number(page as string) || 1;
@@ -44,7 +44,7 @@ const TransactionHistory = async ({ searchParams: { id, page } }: SearchParamPro
                 <SideBar user={loggedIn} />
                 <div className="transactions">
                     <div className="transactions-header">
-                        <TransactionHeaderBox 
+                        <HeaderBox 
                             title="Transaction History"
                             subtext="See your bank details and transactions."
                         />
