@@ -145,13 +145,21 @@ declare interface CreditCardProps {
   userName: string;
   showBalance?: boolean;
 }
-
+declare interface SelectTransactionBoxProps {
+  accounts: Account[];
+  appwriteItemId?: string;
+  // transactions: Transaction[];
+}
 declare interface BankInfoProps {
   account: Account;
   appwriteItemId?: string;
   type: "full" | "card";
 }
-
+declare interface SelectTransactionItemProps {
+  account: Account;
+  appwriteItemId?: string;
+  value: string;
+}
 declare interface HeaderBoxProps {
   type?: "title" | "greeting";
   title: string;
