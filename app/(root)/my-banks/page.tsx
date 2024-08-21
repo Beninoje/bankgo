@@ -2,6 +2,7 @@ import BankCard from '@/components/BankCard'
 import HeaderBox from '@/components/HeaderBox'
 import MobileNav from '@/components/MobileNav'
 import SideBar from '@/components/SideBar'
+import { Toaster } from '@/components/ui/toaster'
 import { getAccounts } from '@/lib/actions/bank.actions'
 import { getLoggedInUser } from '@/lib/actions/user.actions'
 import { Account } from '@/types'
@@ -52,6 +53,7 @@ const MyBanks = async () => {
                 </div>
               </div>
           </div>
+          <Toaster />
     </section>
     
     

@@ -11,13 +11,10 @@ const Copy = ({ title }: { title: string }) => {
   const { toast } = useToast();
 
   const copyToClipboard = () => {
-    // toast({
-    //     title: "Scheduled: Catch up",
-    //     description: "Friday, February 10, 2023 at 5:57 PM",
-    //     action: (
-    //         <ToastAction altText="Goto schedule to undo">Undo</ToastAction>
-    //       ),
-    //   })
+    toast({
+        title: "Bank ID Copied!",
+        description: `ID: ${title}`,
+      })
     navigator.clipboard.writeText(title);
     setHasCopied(true);
     
