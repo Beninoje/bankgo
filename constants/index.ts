@@ -237,6 +237,19 @@ export const topCategoryStyles = {
     },
     icon: "/icons/coins.svg",
   },
+  Payment: {
+    bg: "bg-yellow-25",
+    circleBg: "bg-yellow-100",
+    text: {
+      main: "text-yellow-900",
+      count: "text-yellow-700",
+    },
+    progress: {
+      bg: "bg-yellow-100",
+      indicator: "bg-yellow-700",
+    },
+    icon: "/icons/cash.svg",
+  },
   default: {
     bg: "bg-pink-25",
     circleBg: "bg-pink-100",
@@ -260,9 +273,9 @@ export const transactionCategoryStyles = {
     chipBackgroundColor: "bg-inherit",
   },
   Payment: {
-    borderColor: "border-success-600",
-    backgroundColor: "bg-green-600",
-    textColor: "text-success-700",
+    borderColor: "border-yellow-600",
+    backgroundColor: "bg-yellow-600",
+    textColor: "text-yellow-700",
     chipBackgroundColor: "bg-inherit",
   },
   "Bank Fees": {
