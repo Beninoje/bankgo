@@ -1,10 +1,23 @@
+import HeaderBox from '@/components/HeaderBox'
 import MobileNav from '@/components/MobileNav'
+import PaymentTransferForm from '@/components/PaymentTransferForm'
 import SideBar from '@/components/SideBar'
+import { getAccounts } from '@/lib/actions/bank.actions'
+import { getLoggedInUser } from '@/lib/actions/user.actions'
 import Image from 'next/image'
+import { redirect } from 'next/navigation'
 import React from 'react'
 
-const PaymentTransfer = () => {
-  const loggedIn = {firstName:'Beni', lastName:'Noje', email: 'beninoje@gmail.com'}
+const PaymentTransfer = async () => {
+  const loggedIn = await getLoggedInUser();
+  const accounts = await getAccounts({ 
+      userId: loggedIn.$id 
+  });
+  const accountsData = accounts?.data;
+
+  if (!loggedIn) redirect('/sign-in');
+
+  if (!accounts) return;
   return (
     <section className="flex flex-col">
       <div className="flex size-full flex-col">
@@ -17,7 +30,16 @@ const PaymentTransfer = () => {
           </div>
           <div className="flex">
               <SideBar user={loggedIn}/>
-                Payment Transfer
+                <div className="payment-transfer">
+                  <HeaderBox
+                  title="Payment Transfer"
+                  subtext='Please provide any spefic details or notes related to the payment transfer'
+                  />
+                  <div className="size-full pt-5">
+                    <PaymentTransferForm accounts={accountsData}/>
+                  </div>
+                </div>
+                
           </div>
     </section>
     

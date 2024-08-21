@@ -1,6 +1,6 @@
 'use server';
 
-import { exchangePublicTokenProps, getBankProps, getBanksProps, getUserInfoProps, LoginUser, signInProps, SignUpParams, User } from "@/types";
+import { exchangePublicTokenProps, getBankByAccountIdProps, getBankProps, getBanksProps, getUserInfoProps, LoginUser, signInProps, SignUpParams, User } from "@/types";
 import { createAdminClient, createSessionClient } from "../appwrite";
 import { ID, Query } from "node-appwrite";
 import { cookies } from "next/headers";
@@ -239,6 +239,21 @@ export const getBank = async ({documentId}: getBankProps) => {
       BANK_COLLECTION_ID!,
       [Query.equal('$id',[documentId])]
     )
+    return parseStringify(bank.documents[0]);
+  } catch (error) {
+    console.log(error);
+  }
+}
+export const getBankByAccountId = async ({accountId}: getBankByAccountIdProps) => {
+  try {
+    const {database} = await createAdminClient();
+
+    const bank = await database.listDocuments(
+      DATABASE_ID!,
+      BANK_COLLECTION_ID!,
+      [Query.equal('accountId',[accountId])]
+    )
+    if(bank.total !== 1) return null;
     return parseStringify(bank.documents[0]);
   } catch (error) {
     console.log(error);
