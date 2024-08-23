@@ -95,8 +95,17 @@ body{
 h1, h2, h3, h4, h5, p, a, button, b, strong, em, span, q, figcaption, cite {
   font-family: Cern, Helvetica, Arial, sans-serif;
 }
+
 h1,h2,h3,h4,h5,h6{
   color:#1A1A23;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+  @apply dark:text-[#fff]
 }
 h6 {
   font-family: Inconsolata, Consolas, Courier, monospace;
@@ -758,9 +767,9 @@ h6 {
   transition: all 0.3s ease;
   box-shadow:0px 0px 0px;
 }
-.text-color{
+/* .text-color{
   color:#1A1A23;
-}
+} */
 /*!==============FOOTER===============*/
 .footer_social_links{
   transition: transform 0.3s ease;
