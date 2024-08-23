@@ -11,7 +11,9 @@
 body{
   background-color: #f5f5f5;
 }
-
+body{
+  @apply dark:bg-gray-950
+}
 @font-face {
   font-family: Cern;
   font-style: normal;
