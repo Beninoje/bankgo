@@ -12,6 +12,7 @@ const DashboardFooter = ({user, type='desktop'}:FooterProps) => {
         if(loggedOut)
         {
             router.push('/sign-in');
+            return;
         }
     }
   return (

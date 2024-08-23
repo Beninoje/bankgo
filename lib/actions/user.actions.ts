@@ -112,10 +112,12 @@ export async function getLoggedInUser() {
 
     const user = await getUserInfo({ userId: result.$id})
 
+    if (!user) {
+      throw new Error("User info could not be retrieved");
+    }
     return parseStringify(user);
   } catch (error) {
     console.log(error)
-    return null;
   }
 }
 
@@ -123,13 +125,11 @@ export const logoutAccount = async () => {
   try {
     const { account } = await createSessionClient();
 
-    // Delete the session from the server
-    await account.deleteSession('current');
-
-    // Clear the cookie
     cookies().delete('appwrite-session');
+
+   await account.deleteSession('current');
     
-    // Optionally, redirect to login page or show a logged-out state
+    // return parseStringify(user);
   } catch (error) {
     console.error('Error logging out:', error);
     return null;

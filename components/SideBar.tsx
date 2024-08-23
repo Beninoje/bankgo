@@ -6,6 +6,7 @@ import { cn } from '@/lib/utils';
 import { usePathname } from 'next/navigation';
 import DashboardFooter from './DashboardFooter';
 import PlaidLink from './PlaidLink';
+import { SiderbarProps } from '@/types';
 
 const SideBar = ({user}:SiderbarProps) => {
     const pathName = usePathname();

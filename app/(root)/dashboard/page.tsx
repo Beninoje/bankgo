@@ -15,24 +15,23 @@ import RecentTransactions from '@/components/RecentTransactions'
 const Dashboard = async ({ searchParams: {id, page }}: SearchParamProps) => {
   const currentPage = Number(page as string) || 1;
   const loggedIn = await getLoggedInUser();
-  const accounts = await getAccounts({ 
-    userId: loggedIn.$id 
-  });
 
-  if(!accounts) return;
+  if(!loggedIn) redirect('/sign-in');
+
+  const accounts = await getAccounts({ 
+    userId: loggedIn.$id
+  });
 
   const accountsData = accounts?.data;
   const appwriteItemId = (id as string) || accountsData[0]?.appwriteItemId;
 
   const account  = await getAccount({ appwriteItemId });
 
-  console.log({
-    accountsData,
-    account
-  });
-  
+  if(!accounts) return;
 
-  if(!loggedIn) redirect('/sign-in');
+  
+  
+  
   return (
     <section className="flex flex-col">
           <div className="flex size-full flex-col">
