@@ -11,8 +11,9 @@
 body{
   background-color: #f5f5f5;
 }
+
 body{
-  @apply dark:bg-gray-950
+  @apply dark:bg-[#0C0C0D]
 }
 @font-face {
   font-family: Cern;
@@ -112,7 +113,15 @@ h6{
 h6 {
   font-family: Inconsolata, Consolas, Courier, monospace;
 }
-
+.theme-dropdown{
+  background-color: #f5f5f5;
+}
+.theme-dropdown{
+  @apply dark:bg-[#1A1A23]
+}
+.faq_section:is(.dark *) {
+  @apply dark:bg-[#1A1A23]
+}
 /* Global styles or module CSS file */
 .nav_container {
   display: flex;
@@ -127,7 +136,9 @@ h6 {
   z-index: 50; /* Ensure the navbar is on top */
   transition: transform 0.3s ease-in-out;
 }
-
+.nav_container{
+  @apply dark:bg-[#0C0C0D]
+}
 .nav_container.hidden {
   transform: translateY(-100%);
 }
@@ -317,6 +328,11 @@ h6 {
   box-shadow: 4px 4px 0px #1A1A23;
   transition:all 0.2s ease;
 }
+.sign_up_btn:is(.dark *) {
+  border: none;
+  box-shadow: 4px 4px 0px #2e2e38;
+  color:#2e2e38;
+}
 .sign_up_btn:hover{
   box-shadow: 0px 0px 0px #1A1A23;
 }
@@ -336,6 +352,11 @@ h6 {
 }
 .login_btn:hover{
   box-shadow: 0px 0px 0px #FF7E61;
+}
+.login_btn:is(.dark *) {
+  border: none;
+  color:#dfdfdf !important;
+  background-color: #2e2e38;
 }
 .auth_btn_container {
   display: flex;
@@ -552,6 +573,12 @@ h6 {
   .faq_section{
     @apply px-0
   }
+  .auth_btn_container{
+    display:none !important;
+  }
+  .mobile_auth_container{
+    display: flex !important;
+  }
 }
 @media (max-width: 660px) {
   .review_card_container {
@@ -592,12 +619,7 @@ h6 {
   .intro_image_container {
     @apply mt-20
   }
-  .auth_btn_container{
-    display:none !important;
-  }
-  .mobile_auth_container{
-    display: flex !important;
-  }
+  
   .cash_clearer_container{
     flex-direction: column;
     align-items: start;

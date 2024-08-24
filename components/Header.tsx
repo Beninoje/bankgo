@@ -80,7 +80,7 @@ const Header = () => {
                 Get Started
               </Link>
               <Link href="/sign-in" className="mx-4 login_btn">
-                <span className="login_in_btn">Login</span>
+                Login
               </Link>
             </div>
             <div className="flex gap-4 mobile_privacy_container items-center pt-[20px]">
@@ -129,7 +129,7 @@ const Header = () => {
               Get Started
             </Link>
             <Link href="/sign-in" className="mx-4 login_btn">
-              <span className="login_in_btn">Login</span>
+              Login
             </Link>
           </div>
           <button className={`hamburger ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
