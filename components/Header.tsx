@@ -25,8 +25,16 @@ const Header = () => {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+  const { theme, resolvedTheme } = useTheme(); 
+  const [isDarkTheme, setIsDarkTheme] = useState<boolean | null>(null);
 
+  
   useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
     const handleScroll = () => {
       if (window.scrollY < lastScrollY) {
         setIsScrollingUp(true);
@@ -38,20 +46,21 @@ const Header = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
   }, [isOpen]);
+
+  useEffect(() => {
+    setIsDarkTheme(resolvedTheme === 'dark');
+  }, [resolvedTheme]);
+
+  if (isDarkTheme === null) {
+    return <div>Loading...</div>; 
+  }
   
   return (
     <header className='px-3 py-4 w-full m_header'>
         <nav className={`nav_container ${isScrollingUp ? 'visible' : 'hidden'} ${isOpen ? 'open' : ''}`}>
         <Link href="/" className="flex gap-2 items-center">
-          <Image src="/icons/logo.svg" width={30} height={30} alt="bankon logo" />
+          <Image src={isDarkTheme ? "/icons/dark-logo.svg" :"/icons/logo.svg"} width={30} height={30} alt="bankon logo" />
           <h1 className="text-color font-semibold text-[24px] tracking-wide">
             bank<span className="text-[#FF7E61]">on</span>
           </h1>
@@ -65,7 +74,7 @@ const Header = () => {
         </div>
         <div className={`nav_list_mobile_container ${isOpen ? 'open' : ''}`}>
           <Link href="/" className="flex gap-2 items-center">
-            <Image src="/icons/logo.svg" width={50} height={50} alt="bankon logo" />
+            <Image src={isDarkTheme ? "/icons/dark-logo.svg" :"/icons/logo.svg"} width={50} height={50} alt="bankon logo" />
             <h1 className="text-color font-semibold text-[30px] tracking-wide">
               bank<span className="text-[#FF7E61]">on</span>
             </h1>
@@ -104,17 +113,17 @@ const Header = () => {
               <ul className='flex gap-4'>
                 <li>
                   <Link href="/">
-                    <Image src="/icons/IG_logo.svg" alt="" width={25} height={25} className='footer_social_links' />
+                    <Image src={isDarkTheme ? "/icons/IG_logo_dark.svg" : "/icons/IG_logo.svg"} alt="" width={25} height={25} className='footer_social_links' />
                   </Link>
                 </li>
                 <li>
                   <Link href="/">
-                    <Image src="/icons/FB_logo.svg" alt="" width={25} height={25} className='footer_social_links' />
+                    <Image src={isDarkTheme ? "/icons/FB_logo_dark.svg" : "/icons/FB_logo.svg"} alt="" width={25} height={25} className='footer_social_links' />
                   </Link>
                 </li>
                 <li>
                   <Link href="/">
-                    <Image src="/icons/LI_logo.svg" alt="" width={25} height={25} className='footer_social_links' />
+                    <Image src={isDarkTheme ? "/icons/LI_logo_dark.svg" : "/icons/LI_logo.svg"} alt="" width={25} height={25} className='footer_social_links' />
                   </Link>
                 </li>
               </ul>

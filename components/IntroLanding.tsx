@@ -1,8 +1,23 @@
+"use client"
 import Link from 'next/link'
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useTheme } from 'next-themes'
 
 const IntroLanding = () => {
+  const { theme, resolvedTheme } = useTheme(); // use `resolvedTheme` for the final theme
+  const [isDarkTheme, setIsDarkTheme] = useState<boolean | null>(null);
+
+  useEffect(() => {
+    // Update theme state after theme is resolved
+    setIsDarkTheme(resolvedTheme === 'dark');
+  }, [resolvedTheme]);
+
+  // If the theme is not resolved yet, show a placeholder or loading state
+  if (isDarkTheme === null) {
+    return <div>Loading...</div>; // or any placeholder
+  }
+
   return (
     <div className="">
         <div className="grid grid-cols-4 items-center landing_container pt-[100px]">
@@ -21,7 +36,13 @@ const IntroLanding = () => {
             </div>
         </div>
       <div className="w-full intro_image_container flex justify-center mt-32">
-        <Image src="/icons/homepage-img.svg" alt="homepage img" width={1000} height={1000} className='intro_image'/>
+        <Image 
+          src={isDarkTheme ? "/icons/dark-dashboard.svg" : "/icons/homepage-img.svg"} 
+          alt="homepage img" 
+          width={1000} 
+          height={1000} 
+          className='intro_image'
+          />
       </div>
     </div>
     

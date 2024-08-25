@@ -3,10 +3,11 @@
 import { useState } from 'react';
 import { useDrag } from '@use-gesture/react';
 import Image from 'next/image';
+import { ReviewCardProps } from '@/types';
 
 const ReviewCard: React.FC<ReviewCardProps> = ({ name, occupation, review, profileURL, workImgURL, quoteSvg, rating }) => {
     return (
-      <div className="review_card_container p-5 rounded-[15px] bg-[#fff] w-[900px] h-auto mx-auto" >
+      <div className="review_card_container p-5 rounded-[15px] bg-[#fff] dark:bg-[#1A1A23] w-[900px] h-auto mx-auto" >
         <div className="grid grid-cols-3">
             <div className="col-span-2 review_desc_container  flex flex-col justify-evenly">
               <div className="flex items-start pr-10">
@@ -58,7 +59,7 @@ const Carousel: React.FC<{ reviews: ReviewCardProps[] }> = ({ reviews }) => {
 
     return (
         <div className="overflow-hidden relative py-[50px]" >
-            <div className="flex transition-transform duration-200 ease-in-out bg-[#f5f5f5]" style={{ transform: `translateX(${-currentIndex * 100}%)` }}>
+            <div className="flex transition-transform duration-200 ease-in-out bg-[#f5f5f5] dark:bg-[#121217]"  style={{ transform: `translateX(${-currentIndex * 100}%)` }}>
                 {reviews.map((review, index) => (
                     <div key={index} className={`slide ${index === currentIndex ? 'active' : ''}`} >
                         <ReviewCard {...review} />
