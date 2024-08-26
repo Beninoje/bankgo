@@ -1,8 +1,20 @@
+"use client"
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
+import { useTheme } from 'next-themes'
 
 const CashClearer = () => {
+    const { theme, resolvedTheme } = useTheme(); 
+  const [isDarkTheme, setIsDarkTheme] = useState<boolean | null>(null);
+
+  useEffect(() => {
+    setIsDarkTheme(resolvedTheme === 'dark');
+  }, [resolvedTheme]);
+
+  if (isDarkTheme === null) {
+    return <div>Loading...</div>; 
+  }
   return (
     <div className='bg-[#fff] dark:bg-[#1a1a23]'>
         <div className="py-[100px] px-16 cash_clearer_section">
@@ -17,7 +29,7 @@ const CashClearer = () => {
                     </Link>
                 </div>
                 <div className="cash_clearer_img_container p-4">
-                    <Image src="/icons/cash_clear.svg" alt="" width={400} height={400} className='cash_clearer_img'/>
+                    <Image src={isDarkTheme ? '/icons/cash_clear_dark.svg' : "/icons/cash_clear.svg"} alt="" width={400} height={400} className='cash_clearer_img'/>
                 </div>
                 
             </div>

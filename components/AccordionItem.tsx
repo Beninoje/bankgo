@@ -18,7 +18,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({open,toggle,title,descript
         <div className="flex justify-between items-center">
             <h3 className="font-bold text-color text-[25px]">{title}</h3>
             <div
-                className="cursor-pointer bg-[#fff]  text-[25px] border border-[#1A1A23] p-2 rounded-full"
+                className="cursor-pointer bg-[#fff] dark:bg-[#ebebeb] dark:border-[#fff]  text-[25px] border border-[#1A1A23] p-2 rounded-full"
             >
                 {open ? (
                 <Image
