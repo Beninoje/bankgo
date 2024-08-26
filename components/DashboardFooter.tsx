@@ -2,7 +2,19 @@ import { logoutAccount } from '@/lib/actions/user.actions'
 import { FooterProps } from '@/types'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
-import React from 'react'
+import React from 'react';
+import {
+    AlertDialog,
+    AlertDialogAction,
+    AlertDialogCancel,
+    AlertDialogContent,
+    AlertDialogDescription,
+    AlertDialogFooter,
+    AlertDialogHeader,
+    AlertDialogTitle,
+    AlertDialogTrigger,
+  } from "@/components/ui/alert-dialog"
+  
 
 const DashboardFooter = ({user, type='desktop'}:FooterProps) => {
     const router = useRouter();
@@ -25,9 +37,24 @@ const DashboardFooter = ({user, type='desktop'}:FooterProps) => {
             <h2 className='text-14 truncate font-normal text-gray-300'>{user?.email}</h2>
         </div>
         <div className="">
-            <button onClick={handleLogOut}>
-                <Image src='/icons/logout.svg' width={20} height={20} alt="logout"/>
-            </button>
+            <AlertDialog>
+                <AlertDialogTrigger>
+                    <Image src='/icons/logout.svg' width={20} height={20} alt="logout"/>
+                </AlertDialogTrigger>
+                <AlertDialogContent>
+                    <AlertDialogHeader>
+                    <AlertDialogTitle>Are you sure you want to logout?</AlertDialogTitle>
+                    {/* <AlertDialogDescription>
+                        This action cannot be undone. This will permanently delete your account
+                        and remove your data from our servers.
+                    </AlertDialogDescription> */}
+                    </AlertDialogHeader>
+                    <AlertDialogFooter>
+                    <AlertDialogCancel>Cancel</AlertDialogCancel>
+                    <AlertDialogAction onClick={handleLogOut}>Continue</AlertDialogAction>
+                    </AlertDialogFooter>
+                </AlertDialogContent>
+            </AlertDialog>
         </div>
     </footer>
   )

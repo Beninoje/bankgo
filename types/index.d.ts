@@ -207,7 +207,9 @@ declare interface PlaidLinkProps {
 declare interface AuthFormProps {
   type: "sign-in" | "sign-up";
 }
-
+declare interface HeaderProps{
+  user: User;
+}
 declare interface BankDropdownProps {
   accounts: Account[];
   setValue?: UseFormSetValue<any>;

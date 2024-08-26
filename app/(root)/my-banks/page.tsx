@@ -12,11 +12,12 @@ import React from 'react'
 
 const MyBanks = async () => {
   const loggedIn = await getLoggedInUser();
+
+  if (!loggedIn) redirect('/sign-in');
+
   const accounts = await getAccounts({ 
       userId: loggedIn.$id 
   });
-
-  if (!loggedIn) redirect('/sign-in');
 
   if (!accounts) return;
   return (

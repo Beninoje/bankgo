@@ -9,11 +9,13 @@ import BlogReview from '@/components/BlogReview';
 import { TryNow } from '@/components/TryNow';
 import PennyProtected from '@/components/PennyProtected';
 import IntroLanding from '@/components/IntroLanding';
+import { getLoggedInUser } from '@/lib/actions/user.actions';
 
-const Home: React.FC= () => {
+const Home: React.FC= async() => {
+  const loggedIn = await getLoggedInUser();
   return (
     <div>
-      <Header/>
+      <Header user={loggedIn}/>
       <IntroLanding/>
       <Banks/>
       <FAQInfo/>

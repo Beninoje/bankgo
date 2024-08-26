@@ -20,6 +20,9 @@ const TransactionHistory = async ({ searchParams: { id, page } }: SearchParamPro
     const currentPage = Number(page as string) || 1;
     
     const loggedIn = await getLoggedInUser();
+    
+    if (!loggedIn) redirect('/sign-in');
+
     const accounts = await getAccounts({ 
         userId: loggedIn.$id 
     });
@@ -38,7 +41,7 @@ const TransactionHistory = async ({ searchParams: { id, page } }: SearchParamPro
     const currentTransactions = account?.transactions.slice(
         indexOfFirstTransaction, indexOfLastTransaction
     )
-    if (!loggedIn) redirect('/sign-in');
+    
 
     if (!accounts) return;
 

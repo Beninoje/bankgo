@@ -42,8 +42,8 @@ const PlaidLink = ({ user, variant }: PlaidLinkProps) => {
   const { open, ready: plaidReady } = usePlaidLink(config);
 
   useEffect(() => {
-    setReady(plaidReady); // Update the local ready state
-    console.log('Plaid Link Ready:', plaidReady); // Debugging Plaid ready state
+    setReady(plaidReady); 
+    console.log('Plaid Link Ready:', plaidReady); 
   }, [plaidReady]);
 
   return (
@@ -74,7 +74,7 @@ const PlaidLink = ({ user, variant }: PlaidLinkProps) => {
             width={24}
             height={24}
           />
-          <p className='text-[16px] font-semibold text-black-2'>Connect bank</p>
+          <p className='text-[16px] sidebar-label font-semibold text-black-2'>Connect bank</p>
         </Button>
       )}
     </>

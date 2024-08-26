@@ -16,17 +16,21 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-const Header = () => {
+import { getLoggedInUser } from '@/lib/actions/user.actions'
+import { HeaderProps } from '@/types'
+const Header = ({user}:HeaderProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrollingUp, setIsScrollingUp] = useState(true);
   let lastScrollY = 0;
-  const { setTheme } = useTheme()
+  const { setTheme } = useTheme();
+  const { theme, resolvedTheme } = useTheme(); 
+  const [isDarkTheme, setIsDarkTheme] = useState<boolean | null>(null);
+  
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-  const { theme, resolvedTheme } = useTheme(); 
-  const [isDarkTheme, setIsDarkTheme] = useState<boolean | null>(null);
+  
 
   
   useEffect(() => {
@@ -72,7 +76,7 @@ const Header = () => {
             ))}
           </ul>
         </div>
-        <div className={`nav_list_mobile_container ${isOpen ? 'open' : ''}`}>
+        <div className={`nav_list_mobile_container ${isOpen ? 'open' : ''} `}>
           <Link href="/" className="flex gap-2 items-center">
             <Image src={isDarkTheme ? "/icons/dark-logo.svg" :"/icons/logo.svg"} width={50} height={50} alt="bankon logo" />
             <h1 className="text-color font-semibold text-[30px] tracking-wide">
@@ -133,11 +137,11 @@ const Header = () => {
             </div>
         </div>
         <div className="flex">
-          <div className={`auth_btn_container ${isOpen ? 'open': ''}`}>
-            <Link href="/sign-up" className="sign_up_btn">
+          <div className={`auth_btn_container ${isOpen ? 'open': ''} `}>
+            <Link href="/sign-up" className={user ? 'hidden' : "sign_up_btn"}>
               Get Started
             </Link>
-            <Link href="/sign-in" className="mx-4 login_btn">
+            <Link href="/sign-in" className={user ? 'hidden' : "mx-4 login_btn"}>
               Login
             </Link>
           </div>
