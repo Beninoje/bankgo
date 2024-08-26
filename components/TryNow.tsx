@@ -1,11 +1,22 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { ContainerScroll } from "./ui/container-scroll-animation";
 import Image from "next/image";
 import Link from "next/link";
+import { useTheme } from "next-themes";
 
 
 export function TryNow() {
+  const { theme, resolvedTheme } = useTheme(); 
+  const [isDarkTheme, setIsDarkTheme] = useState<boolean | null>(null);
+
+  useEffect(() => {
+    setIsDarkTheme(resolvedTheme === 'dark');
+  }, [resolvedTheme]);
+
+  if (isDarkTheme === null) {
+    return <div>Loading...</div>; 
+  }
   return (
     <div className="flex flex-col overflow-hidden">
       <ContainerScroll
@@ -18,7 +29,7 @@ export function TryNow() {
         }
       >
         <Image
-          src={`/icons/try_now.svg`}
+          src={isDarkTheme ? `/icons/dark-dashboard.svg` : `/icons/try_now.svg`}
           alt="hero"
           height={720}
           width={1400}

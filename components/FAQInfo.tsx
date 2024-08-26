@@ -18,10 +18,10 @@ const FAQInfo = () => {
                 <h2 className='text-color main_header_title font-bold text-[50px]'>
                     Beyond The<br></br> Business Banking Basics
                 </h2>
-                <Link href="/sign-in" className='bg-[#1A1A23] py-[9px] pl-6 pr-3 w-[170px] rounded-full  flex items-center justify-between mt-10'>
+                <Link href="/sign-in" className='bg-[#1A1A23] dark:bg-[#121217] py-[9px] pl-6 pr-3 w-[170px] rounded-full  flex items-center justify-between mt-10'>
                     <p className='text-white text-left bg-transparent tracking-wide'>Get Started</p>
                     <div className="bg-[#f5f5f5] p-2 rounded-full">
-                    <Image src='/icons/arrow-right-solid.svg' alt="arrow" width={15} height={15} />
+                        <Image src='/icons/arrow-right-solid.svg' alt="arrow" width={15} height={15} />
                     </div>
                 </Link>
             </div>
