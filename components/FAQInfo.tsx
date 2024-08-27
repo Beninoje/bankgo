@@ -18,6 +18,7 @@ const FAQInfo = () => {
                 <h2 className='text-color main_header_title font-bold text-[50px]'>
                     Beyond The<br></br> Business Banking Basics
                 </h2>
+                <p className='text-[18px] text-[#aeaeae]'>Elevate your business banking with advanced tools designed to streamline your financial management. Move beyond the basics and take control of your business's financial future.</p>
                 <Link href="/sign-in" className='bg-[#1A1A23] dark:bg-[#121217] py-[9px] pl-6 pr-3 w-[170px] rounded-full  flex items-center justify-between mt-10'>
                     <p className='text-white text-left bg-transparent tracking-wide'>Get Started</p>
                     <div className="bg-[#f5f5f5] p-2 rounded-full">
