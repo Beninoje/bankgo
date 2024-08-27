@@ -1,14 +1,54 @@
+"use client"
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import BankCard from './BankCard'
 import { CategoryCount, RightSidebarProps } from '@/types'
 import { countTransactionCategories } from '@/lib/utils'
 import { Category } from './Category'
+import { useRouter } from 'next/navigation'
+import { createLinkToken, exchangePublicToken } from '@/lib/actions/user.actions'
+import { PlaidLinkOnSuccess, PlaidLinkOptions, usePlaidLink } from 'react-plaid-link'
 
 const RightSideBar = ({user,transactions,banks}:RightSidebarProps) => {
     const categories: CategoryCount[] = countTransactionCategories(transactions);
-    console.log(categories);
+    const router = useRouter();
+  const [token, setToken] = useState<string>('');
+  const [ready, setReady] = useState<boolean>(false);
+
+  useEffect(() => {
+    const getLinkToken = async () => {
+      try {
+        const data = await createLinkToken(user);
+        console.log('Received Link Token:', data?.linkToken); // Debugging token
+        setToken(data?.linkToken);
+      } catch (error) {
+        console.error('Error retrieving link token:', error);
+      }
+    };
+
+    getLinkToken();
+  }, [user]);
+
+  const onSuccess = useCallback<PlaidLinkOnSuccess>(async (public_token: string) => {
+    try {
+      await exchangePublicToken({ publicToken: public_token, user });
+      router.push('/dashboard');
+    } catch (error) {
+      console.error('Error during public token exchange:', error);
+    }
+  }, [user]);
+
+  const config: PlaidLinkOptions = {
+    token,
+    onSuccess
+  };
+
+  const { open, ready: plaidReady } = usePlaidLink(config);
+
+  useEffect(() => {
+    setReady(plaidReady); 
+  }, [plaidReady]);
   return (
     <aside className='right-sidebar'>
         <section className="flex flex-col pb-8">
@@ -32,12 +72,12 @@ const RightSideBar = ({user,transactions,banks}:RightSidebarProps) => {
                 <h2 className="header-2">
                     My Banks
                 </h2>
-                <Link href="/" className='flex gap-2'>
+                <button onClick={() => open()} className='flex gap-2'>
                     <Image src="/icons/plus.svg" width={20} height={20} alt="plus"/>
                     <h2 className="text-14 font-semibold text-gray-600">
                         Add Bank
                     </h2>
-                </Link>
+                </button>
             </div>
             {banks?.length > 0 &&(
                 <div className="relative flex flex-1 flex-col items-center justify-center gap-5">
