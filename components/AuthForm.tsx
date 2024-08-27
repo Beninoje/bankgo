@@ -1,6 +1,6 @@
 "use client"
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 
 import { z } from "zod"
@@ -15,11 +15,16 @@ import CustomFormInputs from './CustomFormInputs'
 import { useRouter } from 'next/navigation'
 import { getLoggedInUser, signIn, signUp } from '@/lib/actions/user.actions'
 import PlaidLink from './PlaidLink'
+import { useTheme } from 'next-themes'
 
 const AuthForm = ({type}: {type:string}) => {
     const [user,setUser] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
     const formSchema = authformSchema(type);
+    const { setTheme } = useTheme();
+  const { theme, resolvedTheme } = useTheme(); 
+  const [isDarkTheme, setIsDarkTheme] = useState<boolean | null>(null);
+    
     
     const router = useRouter();
     // 1. Define your form.
@@ -76,6 +81,13 @@ const AuthForm = ({type}: {type:string}) => {
         }
         
     }
+    useEffect(() => {
+        setIsDarkTheme(resolvedTheme === 'dark');
+      }, [resolvedTheme]);
+    
+      if (isDarkTheme === null) {
+        return <div>Loading...</div>; 
+      }
   return (
     <section className='auth-form'>
         <header className="flex flex-col gap-5 md:gap-8">
@@ -96,7 +108,7 @@ const AuthForm = ({type}: {type:string}) => {
                     ? 'Sign In'
                     : 'Sign Up'
                 }
-                <p className='text-16 font-normal text-gray-600'>
+                <p className='text-16 font-normal text-gray-600 dark:text-gray-300'>
                     {user 
                         ? 'Link your account to get started'
                         : 'Please enter your details'
@@ -152,7 +164,7 @@ const AuthForm = ({type}: {type:string}) => {
                     </form>
                 </Form>
                 <footer className="flex justify-center gap-1">
-                    <p className='text-14 font-normal text-gray-600'>{type === 'sign-in' ? "Don't have an account?" : 'Already have an account?'}</p>
+                    <p className='text-14 font-normal text-gray-600 dark:text-gray-300'>{type === 'sign-in' ? "Don't have an account?" : 'Already have an account?'}</p>
                     <Link className='form-link font-semibold' href={type==='sign-in' ? '/sign-up' : '/sign-in'}>{type==='sign-in' ? 'Sign Up' : 'Login'}</Link>
                 </footer>
             </>
