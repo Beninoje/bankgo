@@ -5,46 +5,58 @@ import { PlaidLinkOnSuccess, PlaidLinkOptions, usePlaidLink } from 'react-plaid-
 import { useRouter } from 'next/navigation';
 import { createLinkToken, exchangePublicToken } from '@/lib/actions/user.actions';
 import Image from 'next/image';
+import { useTheme } from 'next-themes';
 
 const PlaidLink = ({ user, variant }: PlaidLinkProps) => {
   const router = useRouter();
   const [token, setToken] = useState<string>('');
   const [ready, setReady] = useState<boolean>(false);
 
+  const { setTheme } = useTheme();
+  const { theme, resolvedTheme } = useTheme(); 
+  const [isDarkTheme, setIsDarkTheme] = useState<boolean | null>(null);
+    
   useEffect(() => {
+    setIsDarkTheme(resolvedTheme === 'dark');
+
     const getLinkToken = async () => {
-      try {
-        const data = await createLinkToken(user);
-        console.log('Received Link Token:', data?.linkToken); // Debugging token
-        setToken(data?.linkToken);
-      } catch (error) {
-        console.error('Error retrieving link token:', error);
-      }
+        try {
+            const data = await createLinkToken(user);
+            console.log('Received Link Token:', data?.linkToken);
+            setToken(data?.linkToken);
+        } catch (error) {
+            console.error('Error retrieving link token:', error);
+        }
     };
 
     getLinkToken();
-  }, [user]);
+}, [resolvedTheme, user]);
 
-  const onSuccess = useCallback<PlaidLinkOnSuccess>(async (public_token: string) => {
+const onSuccess = useCallback<PlaidLinkOnSuccess>(async (public_token: string) => {
     try {
-      await exchangePublicToken({ publicToken: public_token, user });
-      router.push('/dashboard');
+        await exchangePublicToken({ publicToken: public_token, user });
+        router.push('/dashboard');
     } catch (error) {
-      console.error('Error during public token exchange:', error);
+        console.error('Error during public token exchange:', error);
     }
-  }, [user]);
+}, [user]);
 
-  const config: PlaidLinkOptions = {
+const config: PlaidLinkOptions = {
     token,
     onSuccess
-  };
+};
 
-  const { open, ready: plaidReady } = usePlaidLink(config);
+const { open, ready: plaidReady } = usePlaidLink(config);
 
-  useEffect(() => {
-    setReady(plaidReady); 
-    console.log('Plaid Link Ready:', plaidReady); 
-  }, [plaidReady]);
+// Update readiness state based on Plaid Link readiness
+useEffect(() => {
+    setReady(plaidReady);
+    console.log('Plaid Link Ready:', plaidReady);
+}, [plaidReady]);
+
+if (isDarkTheme === null) {
+    return <div>Loading...</div>;
+}
 
   return (
     <>
@@ -73,8 +85,9 @@ const PlaidLink = ({ user, variant }: PlaidLinkProps) => {
             alt="connect bank"
             width={24}
             height={24}
+            className='brightness-[1] invert-[0.7]'
           />
-          <p className='text-[16px] sidebar-label font-semibold text-black-2'>Connect bank</p>
+          <p className='text-[16px] sidebar-label font-semibold text-black-2 dark:text-[#aeaeae]'>Connect bank</p>
         </Button>
       )}
     </>

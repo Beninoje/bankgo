@@ -7,9 +7,22 @@ import { usePathname } from 'next/navigation';
 import DashboardFooter from './DashboardFooter';
 import PlaidLink from './PlaidLink';
 import { SiderbarProps } from '@/types';
+import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
 
 const SideBar = ({user}:SiderbarProps) => {
     const pathName = usePathname();
+    const { setTheme } = useTheme();
+    const { theme, resolvedTheme } = useTheme(); 
+    const [isDarkTheme, setIsDarkTheme] = useState<boolean | null>(null);
+    
+    useEffect(() => {
+        setIsDarkTheme(resolvedTheme === 'dark');
+      }, [resolvedTheme]);
+    
+      if (isDarkTheme === null) {
+        return <div>Loading...</div>; 
+      }
 
   return (
     <section className='sidebar'>
@@ -28,20 +41,31 @@ const SideBar = ({user}:SiderbarProps) => {
             {sidebarLinks.map((item)=>{
                 const isActive = pathName === item.route || pathName.startsWith(`${item.route}/`)
                 return (
-                    <Link 
-                        href={item.route} 
-                        key={item.label}
-                        className={cn('sidebar-link',{'bg-bank-gradient':isActive})}>
+                    <Link
+                            href={item.route}
+                            key={item.label}
+                            className={cn('sidebar-link', { 'bg-bank-gradient': isActive })}
+                        >
                             <div className='relative size-6'>
                                 <Image
                                     src={item.imgURL}
                                     alt={item.label}
                                     fill
-                                    className={cn({'brightness-[3] invert-0':isActive})}
+                                    className={cn({
+                                        'brightness-[3] invert': isActive && isDarkTheme,
+                                        'brightness-[3] invert-0': isActive && !isDarkTheme,
+                                        'brightness-[1] invert-[0.7]': !isActive && isDarkTheme,
+                                    })}
                                 />
                             </div>
-                            <p className={cn('sidebar-label',{'!text-white':isActive})}>{item.label}</p>
-                    </Link>
+                            <p className={cn('sidebar-label', {
+                                '!text-[#1A1A23]': isActive && isDarkTheme,
+                                '!text-[#AEAEAE]': !isActive && isDarkTheme,
+                                '!text-white': isActive && !isDarkTheme,
+                            })}>
+                                {item.label}
+                            </p>
+                        </Link>
                 )
             })}
             <PlaidLink user={user} />
