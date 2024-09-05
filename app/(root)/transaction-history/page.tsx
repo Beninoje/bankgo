@@ -55,9 +55,9 @@ const TransactionHistory = async ({ searchParams: { id, page } }: SearchParamPro
                     </div>
                 </div>
             </div>
-            <div className="flex">
+            <div className="flex ">
                 <SideBar user={loggedIn} />
-                <div className="transactions">
+                <div className="transactions dark:bg-[#1A1A23]">
                     <div className="transactions-header">
                         <HeaderBox 
                             title="Transaction History"
@@ -68,7 +68,7 @@ const TransactionHistory = async ({ searchParams: { id, page } }: SearchParamPro
                             appwriteItemId={appwriteItemId}
                         />
                     </div>
-                    <div className="transactions-account">
+                    <div className="transactions-account dark:bg-[#22222E] dark:border-none">
                         <div className="flex flex-col gap-2">
                             <h2 className="text-18 font-bold text-white">{account?.data.name}</h2>
                             <p className="text-14 text-blue-25">

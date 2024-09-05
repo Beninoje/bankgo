@@ -898,7 +898,7 @@ h6 {
 
 @layer utilities {
   .input-class {
-    @apply text-16 placeholder:text-16 rounded-lg border border-gray-300 text-gray-900 placeholder:text-gray-500;
+    @apply text-16 placeholder:text-16 rounded-lg border border-gray-300 dark:border-[#3B3B45] text-gray-900 placeholder:text-gray-500;
   }
 
   .sheet-content button {
@@ -1170,11 +1170,11 @@ h6 {
   }
 
   .payment-transfer_form-details {
-    @apply flex flex-col gap-1 border-t border-gray-200 pb-5 pt-6;
+    @apply flex flex-col gap-1 border-t dark:border-[#3B3B45]  border-gray-200 pb-5 pt-6;
   }
 
   .payment-transfer_btn-box {
-    @apply mt-5 flex w-full max-w-[850px] gap-3 border-gray-200 py-5;
+    @apply mt-5 flex w-full max-w-[850px] gap-3  py-5;
   }
 
   .payment-transfer_btn {

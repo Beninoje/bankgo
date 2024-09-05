@@ -32,11 +32,11 @@ const SelectTransactionBox = ({
 
     return (
         <Select onValueChange={handleBankChange} >
-            <SelectTrigger className="w-[200px] flex gap-3" >
+            <SelectTrigger className="w-[200px] border-[#3B3B45] flex gap-3" >
                 <Image src="/icons/card.svg" width={20} height={20} alt="credit card"/>
                 <SelectValue placeholder="Select an account" />
             </SelectTrigger>
-            <SelectContent className="bg-[#fff]">
+            <SelectContent className="bg-[#fff] dark:bg-[#22222E]">
                 {accounts.map((account: Account) => (
                     <SelectItem key={account.appwriteItemId} value={account.appwriteItemId}>
                         {account.name}

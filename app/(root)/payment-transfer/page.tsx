@@ -33,7 +33,7 @@ const PaymentTransfer = async () => {
           </div>
           <div className="flex">
               <SideBar user={loggedIn}/>
-                <div className="payment-transfer">
+                <div className="payment-transfer dark:bg-[#1A1A23]">
                   <HeaderBox
                   title="Payment Transfer"
                   subtext='Please provide any spefic details or notes related to the payment transfer'

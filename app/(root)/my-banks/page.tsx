@@ -1,3 +1,4 @@
+// "use client"
 import BankCard from '@/components/BankCard'
 import HeaderBox from '@/components/HeaderBox'
 import MobileNav from '@/components/MobileNav'
@@ -6,11 +7,22 @@ import { Toaster } from '@/components/ui/toaster'
 import { getAccounts } from '@/lib/actions/bank.actions'
 import { getLoggedInUser } from '@/lib/actions/user.actions'
 import { Account } from '@/types'
+import { useTheme } from 'next-themes'
 import Image from 'next/image'
 import { redirect } from 'next/navigation'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 const MyBanks = async () => {
+  // const { resolvedTheme } = useTheme();
+  // const [isDarkTheme, setIsDarkTheme] = useState<boolean | null>(null);
+
+  // useEffect(() => {
+  //   setIsDarkTheme(resolvedTheme === "dark");
+  // }, [resolvedTheme]);
+
+  // if (isDarkTheme === null) {
+  //   return <div>Loading...</div>; // Or a skeleton loader
+  // }
   const loggedIn = await getLoggedInUser();
 
   if (!loggedIn) redirect('/sign-in');
@@ -30,9 +42,9 @@ const MyBanks = async () => {
                 </div>
               </div>
           </div>
-          <div className="flex">
+          <div className="flex  ">
               <SideBar user={loggedIn}/>
-              <div className="my-banks">
+              <div className="my-banks dark:bg-[#1A1A23]">
                 <HeaderBox 
                   title="My Bank Accounts"
                   subtext="Effortlessly manage your banking activites."

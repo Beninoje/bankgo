@@ -46,24 +46,24 @@ export const BankDropDown = ({
       onValueChange={(value) => handleBankChange(value)}
     >
       <SelectTrigger
-        className={`flex w-full bg-white gap-3 md:w-[300px] ${otherStyles}`}
+        className={`flex w-full bg-white dark:bg-[#22222E] dark:border-[#3B3B45] gap-3 md:w-[300px] ${otherStyles}`}
       >
         <Image src="/icons/card.svg" width={20} height={20} alt="credit card"/>
         <p className="line-clamp-1 w-full text-left">{selected.name}</p>
       </SelectTrigger>
       <SelectContent
-        className={`w-full bg-white md:w-[300px] ${otherStyles}`}
+        className={`w-full bg-white dark:bg-[#22222E] dark:border-[#3B3B45] md:w-[300px] ${otherStyles}`}
         align="end"
       >
         <SelectGroup>
-          <SelectLabel className="py-2 font-normal text-gray-500">
+          <SelectLabel className="py-2 font-normal text-gray-500 ">
             Select a bank to display
           </SelectLabel>
           {accounts.map((account: Account) => (
             <SelectItem
               key={account.id}
               value={account.appwriteItemId}
-              className="cursor-pointer border-t"
+              className="cursor-pointer border-t dark:border-[#3B3B45]"
             >
               <div className="flex flex-col ">
                 <p className="text-16 font-medium">{account.name}</p>
