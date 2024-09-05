@@ -1,3 +1,4 @@
+import { HeaderBoxProps } from '@/types'
 import React from 'react'
 
 const DashboardHeader = ({type="title",title,subtext,user}:HeaderBoxProps) => {
@@ -11,7 +12,7 @@ const DashboardHeader = ({type="title",title,subtext,user}:HeaderBoxProps) => {
                 </span>
             )}    
         </h1>
-        <p className="header-box-subtext">{subtext}</p>
+        <p className="header-box-subtext dark:text-[#AEAEAE]">{subtext}</p>
     </div>
   )
 }

@@ -213,53 +213,77 @@ export const ITEMS = [
 export const topCategoryStyles = {
   "Food and Drink": {
     bg: "bg-blue-25",
+    bgDark:"dark:bg-[#1B2A5E]",
     circleBg: "bg-blue-100",
+    circleDarkbg:"dark:bg-[#0F2A53]",
     text: {
       main: "text-blue-900",
+      mainDark:"dark:text-[#648CC0]",
       count: "text-blue-700",
+      countDark:"dark:text-[#4877B6]"
     },
     progress: {
       bg: "bg-blue-100",
+      bgProgressDark:"dark:bg-[#0F2A53]",
       indicator: "bg-blue-700",
+      darkIndicator:"dark:bg-[#003D7D]",
     },
     icon: "/icons/monitor.svg",
   },
   Travel: {
     bg: "bg-success-25",
+    bgDark:"bg-[#003D25]",
     circleBg: "bg-success-100",
+    circleDarkbg:"bg-[#003420]",
     text: {
       main: "text-success-900",
+      mainDark:"dark:text-[#87BF9C]",
       count: "text-success-700",
+      countDark:"dark:text-[#46A469]"
     },
     progress: {
       bg: "bg-success-100",
+      bgProgressDark:"dark:bg-[#002D1C]",
       indicator: "bg-success-700",
+      darkIndicator:"dark:bg-[#008649]",
     },
     icon: "/icons/coins.svg",
   },
   Payment: {
-    bg: "bg-yellow-25",
-    circleBg: "bg-yellow-100",
+        bg: "bg-yellow-500",
+    bgDark: "dark:bg-[#8C4E07]",
+    circleBg: "bg-yellow-300",
+    circleDarkbg: "dark:bg-[#907300]",
     text: {
       main: "text-yellow-900",
+      mainDark: "dark:text-[#DAC474]",
       count: "text-yellow-700",
+      countDark: "dark:text-[#CBB531]",
     },
     progress: {
-      bg: "bg-yellow-100",
+      bg: "bg-yellow-300",
+      bgProgressDark: "dark:bg-[#6B3E0B]",
       indicator: "bg-yellow-700",
+      darkIndicator: "dark:bg-[#CAA50F]",
     },
     icon: "/icons/cash.svg",
-  },
+  }, 
   default: {
     bg: "bg-pink-25",
+    bgDark:"dark:bg-[#3E0F1D]",
     circleBg: "bg-pink-100",
+    circleDarkbg:"dark:bg-[#340D19]",
     text: {
       main: "text-pink-900",
+      mainDark:"dark:text-[#FF67C6]",
       count: "text-pink-700",
+      countDark:"dark:text-[#9E487E]"
     },
     progress: {
       bg: "bg-pink-100",
+      bgProgressDark:"dark:bg-[#380011]",
       indicator: "bg-pink-700",
+      darkIndicator:"dark:bg-[#7A004D]"
     },
     icon: "/icons/shopping-bag.svg",
   },

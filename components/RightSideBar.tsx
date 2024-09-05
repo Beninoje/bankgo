@@ -50,7 +50,7 @@ const RightSideBar = ({user,transactions,banks}:RightSidebarProps) => {
     setReady(plaidReady); 
   }, [plaidReady]);
   return (
-    <aside className='right-sidebar'>
+    <aside className='right-sidebar border-l dark:border-[#3B3B45]'>
         <section className="flex flex-col pb-8">
             <div className="profile-banner"/>
             <div className="profile">
@@ -61,7 +61,7 @@ const RightSideBar = ({user,transactions,banks}:RightSidebarProps) => {
                     <h1 className='profile-name'>
                         {user.firstName}
                     </h1>
-                    <p className="profile-email">
+                    <p className="profile-email dark:text-[#AEAEAE]">
                         {user.email}
                     </p>
                 </div>
@@ -74,7 +74,7 @@ const RightSideBar = ({user,transactions,banks}:RightSidebarProps) => {
                 </h2>
                 <button onClick={() => open()} className='flex gap-2'>
                     <Image src="/icons/plus.svg" width={20} height={20} alt="plus"/>
-                    <h2 className="text-14 font-semibold text-gray-600">
+                    <h2 className="text-14 font-semibold text-gray-600 dark:text-[#FF7E61]">
                         Add Bank
                     </h2>
                 </button>

@@ -15,7 +15,7 @@ const BankCard = ({account, userName, showBalance = true}: CreditCardProps) => {
     return (
     <div className='bg-bank-gradient bank-card'>
             <Link href={`/transaction-history/?id=${account.appwriteItemId}`} className=' h-full relative'>
-                            <div className="bank-card_content">
+                            <div className="bank-card_content overflow-hidden">
                                 <div className="">
                                     <h1 className="text-16 font-semibold text-white">
                                         {account.name}

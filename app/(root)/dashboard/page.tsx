@@ -33,7 +33,7 @@ const Dashboard = async ({ searchParams: {id, page }}: SearchParamProps) => {
   
   
   return (
-    <section className="flex flex-col">
+    <section className="flex flex-col dark:bg-[#1A1A23]">
           <div className="flex size-full flex-col">
               <div className="root-layout">
                 <Image src='/icons/logo.svg' width={30} height={30} alt="logo" />
@@ -53,7 +53,6 @@ const Dashboard = async ({ searchParams: {id, page }}: SearchParamProps) => {
                     user={loggedIn?.firstName || 'Guest'}
                     subtext="Access and manage your account and transactions efficiently"
                   />
-
                   <TotalBalanceBox
                     accounts={accountsData}
                     totalBanks={accounts?.totalBanks}
@@ -67,17 +66,14 @@ const Dashboard = async ({ searchParams: {id, page }}: SearchParamProps) => {
                   page={currentPage}
                 />
               </div>
-            </div>
+          </div>
             <RightSideBar
               user={loggedIn}
               transactions={account?.transactions}
               banks={accountsData?.slice(0,2)}
             />
-
           </div>
-          
     </section>
-    
   )
 }
 
