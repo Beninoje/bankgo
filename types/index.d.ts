@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 
 import { Control, FieldPath, Form } from "react-hook-form";
-import { z } from "zod";
+import { StringValidation, z } from "zod";
 
 declare type SearchParamProps = {
   params: { [key: string]: string };
@@ -340,6 +340,15 @@ declare interface CreateTransactionProps {
   email: string;
 }
 
+declare interface CreateBlogProps {
+  title:string;
+  subtitle:string;
+  image:string;
+  header_1:string;
+  paragraph_1:string;
+  header_2:string;
+  paragraph_2:string;
+}
 declare interface getTransactionsByBankIdProps {
   bankId: string;
 }

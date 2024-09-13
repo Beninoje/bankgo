@@ -209,3 +209,14 @@ export const authformSchema = (type) => z.object({
   email: z.string().email(),
   password: z.string().min(8),
 })
+
+// BLOG FORM
+export const createBlogSchema = z.object({
+  title: z.string().min(1, 'Title is required'),
+  subtitle: z.string().min(1, 'Subtitle is required'),
+  image: z.string().url('Invalid URL format').min(1, 'Image URL is required'),
+  header_1: z.string().min(1, 'Header 1 is required'),
+  paragraph_1: z.string().min(1, 'Paragraph 1 is required'),
+  header_2: z.string().min(1, 'Header 2 is required'),
+  paragraph_2: z.string().min(1, 'Paragraph 2 is required'),
+});
