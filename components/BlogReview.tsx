@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { LinkPreview } from "@/components/ui/link-preview";
 import { blogStats } from '@/constants';
 import { useTheme } from 'next-themes';
+import { getBlogs } from '@/lib/actions/blog.actions';
 
 const BlogReview = () => {
   const [isHoveredFirst, setIsHoveredFirst] = useState(false);
@@ -17,6 +18,24 @@ const BlogReview = () => {
   const { theme, resolvedTheme } = useTheme(); 
   const [isDarkTheme, setIsDarkTheme] = useState<boolean | null>(null);
 
+  const [blogs, setBlogs] = useState<any[]>([]);
+
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        const result = await getBlogs(); // Fetch blog data from Appwrite
+        setBlogs(result);
+      } catch (error) {
+        console.log("Failed to fetch blogs:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchBlogs();
+  }, []);
   useEffect(() => {
     setIsDarkTheme(resolvedTheme === 'dark');
   }, [resolvedTheme]);
@@ -74,6 +93,15 @@ const BlogReview = () => {
                   </Link>
                 </div>
               </div>
+              {blogs.map((blog,index)=>(
+                <div className="" key={blog.$id}>
+                  <Link href={`/view/?id=${blog.$id}`}>
+                    Click Here to View Blog
+                  </Link>
+                  <h1>{blog.title}</h1>
+                  <h1>{blog.subtitle}</h1>
+                </div>
+              ))}
               <div className="flex flex-col h-[100px] justify-center">
                 <div className="blog_separator  "></div>
               </div>
