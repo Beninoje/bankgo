@@ -6,7 +6,8 @@ import { createBlogSchema } from '@/lib/utils';
 import { useState } from 'react';
 import { CreateBlogProps } from '@/types';
 import { createBlog } from '@/lib/actions/blog.actions';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
+
 
 const BlogCreateForm = () => {
     const [blog,setBlog] = useState(null);
